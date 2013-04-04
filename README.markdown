@@ -1,0 +1,1 @@
+Data in the `data` directory are the eSets. In order to see how the raw data were obtained and transformed to eSets, please see the `datasrc` directory.

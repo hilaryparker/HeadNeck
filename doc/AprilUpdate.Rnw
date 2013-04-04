@@ -1,0 +1,22 @@
+\documentclass{article}
+
+
+\begin{document}
+
+\title{Update}
+\author{Hilary Parker}
+
+\maketitle
+
+
+test
+
+<<setup, eval=TRUE, include=FALSE, cache=FALSE>>=
+options(digits=3)
+library(ProjectTemplate)
+load.project()
+@
+
+Test!
+
+\end{document}
