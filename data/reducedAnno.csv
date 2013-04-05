@@ -1,0 +1,198 @@
+Research ID,Frozen ID,Tumor Source,Procurement,Affy Microarray,RNA isolation,Amplification,HPV Stat,tumor subsite,Rec,Disease state,Rec Location
+HN02-0333B,HN02-0333B,Primary,Frozen,2004-04-23-CHC51-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,HP,No,DOD,Esophagus
+182,NA,Recurrent Primary,FFPE,323CC147-20070814-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Pos,OP,Yes,DOD,Lung
+366,300520,Primary,Frozen,2004-10-14-CHC61-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Pos,OP,No,NED,NA
+370,300383,Primary,Frozen,2004-10-14-CHC64-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,OC,No,NED,NA
+549,300946,Primary,Frozen,707CC0055-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,No,NED,NA
+609,301129-2,Recurrent Primary,Frozen,706CC24-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OP,Yes,DOD,Skin
+609,301129-1,Recurrent Primary,Frozen,707CC0063-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OP,Yes,DOD,Skin
+609,NA,Recurrent Primary,FFPE,323CC144-20070814-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Neg,OP,Yes,DOD,Skin
+1294,300101,Recurrent Primary,Frozen,707CC0062-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,HP,Yes,DOD,Esophagus
+1417,300724,Recurrent Primary,Frozen,707CC0075-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,NA,OP,Yes,DOD,neck
+2154,361484,Blood,Frozen,707CC30-20071015-Hu133.CEL,PAXgene Blood RNA kit,Nugen_FFPE,Neg,OP,Yes,DOD,"LN, primary"
+2154,NA,Recurrent Primary,FFPE,2007-04-24-323CC136-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,OP,Yes,DOD,"LN, primary"
+2199,301993,Recurrent Primary,Frozen,707CC42-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,L,Yes,DOD,trachea
+HN02-0458B,HN02-0458B,Primary,Frozen,2004-04-22-CHC46-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Pos,OP,No,NED,NA
+HN02-0458B-2,HN02-0458B-2,Primary,Frozen,707CC0050-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,No,NED,NA
+2233,301761,Primary,Frozen,707CC0066-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,No,NED,NA
+2378,362778,Recurrent Primary,Frozen,707CC0067-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,Yes,DOD,"LN, primary"
+767,357001,Blood,Frozen,707CC37-20071015-Hu133.CEL,PAXgene Blood RNA kit,Nugen_FFPE,Neg,OP,Yes,DOD,rec lung met and locoregional
+767,NA,Primary,FFPE,2007-04-24-323CC141-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,OP,Yes,DOD,rec lung met and locoregional
+62,300354,Primary,Frozen,707CC0073-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,No,NED,NA
+182,300609,Primary,Frozen,706CC19-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,L,Yes,DOD,Lung
+670,300734,Primary,Frozen,707CC0060-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OP,Yes,DOD,Primary
+1287,300935,Recurrent Primary,Frozen,707CC38-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OP,Yes,DOD,"Lung, primary"
+1287,362250,Blood,Frozen,707CC32-20071015-Hu133.CEL,PAXgene Blood RNA kit,Nugen_FFPE,Neg,OP,Yes,DOD,"Lung, primary"
+1287,NA,Recurrent Primary,FFPE,2007-04-24-323CC135-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,OP,Yes,DOD,"Lung, primary"
+1955,301548,Primary,Frozen,707CC0065-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,HP,No,DOC,NA
+2396,NA,Primary,FFPE,323CC162-20070905-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Pos,OP,No,DOC ,NA
+2412,366004 (05/07/07) post Tx,Primary,Frozen,708CC10-B9-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,L,No,NED,NA
+2412,366004 (05/07/07) post Tx,Primary,Frozen,708CC10-B11-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,L,No,NED,NA
+2412,NA,Primary,FFPE,323CC161-20070905-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Neg,L,No,NED,NA
+2469,301940 (03/12/07),Primary,Frozen,708CC11-B10-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,Yes,AWD ,LN
+2469,301940 (03/12/07),Primary,Frozen,708CC11-B12-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,Yes,AWD ,LN
+2469,NA,Primary,FFPE,323CC156-20070905-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Pos,OP,Yes,AWD ,LN
+2480,NA,Primary,FFPE,323CC167-20070905-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Neg,L,Yes,DOD ,lung
+2549,NA,Primary,FFPE,323CC159-20070905-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Pos,OP,No,NED,NA
+2660,NA,Primary,FFPE,323CC153-20070905-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Pos,OP,No,NED,NA
+376,300841-2,Primary,Frozen,707CC0071-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OP,Yes,DOD,Primary
+376,300840-1,Second Primary,Frozen,707CC0070-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OP,Yes,DOD,Primary
+550,301126,Recurrent Primary,Frozen,707CC0058-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,Yes,NED,Primary
+1190,356999,Blood,Frozen,707CC21-20071015-Hu133.CEL,PAXgene Blood RNA kit,Nugen_FFPE,Neg,OP,Yes,DOD,LN
+1190,NA,Recurrent Primary,FFPE,2007-04-24-323CC133-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,OP,Yes,DOD,LN
+1266,300171-1,Primary,Frozen,2004-10-14-CHC62-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Pos,OP,Yes,DOD,Lung
+1266,301089-2,Recurrent Primary,Frozen,707CC0057-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,Yes,DOD,Lung
+1389,NA,Primary,FFPE,2007-04-24-323CC140-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,OP,Yes,DOD,Primary
+1682,361709,Blood,Frozen,707CC31-20071015-Hu133.CEL,PAXgene Blood RNA kit,Nugen_FFPE,Neg,Unknown Primary,Yes,DOD,"LN, primary"
+1682,NA,Recurrent LN,FFPE,2007-04-24-323CC138-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,Unknown Primary,Yes,DOD,"LN, primary"
+1767,358497,Blood,Frozen,707CC22-20071015-Hu133.CEL,PAXgene Blood RNA kit,Nugen_FFPE,Neg,OP,Yes,DOD,"LN, primary"
+1767,NA,Primary,FFPE,2007-04-24-323CC142-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,OP,Yes,DOD,"LN, primary"
+1851,358585,Blood,Frozen,707CC23-20071015-Hu133.CEL,PAXgene Blood RNA kit,Nugen_FFPE,Neg,OP,Yes,DOD,"LN, primary"
+1851,NA,Recurrent Primary,FFPE,2007-04-24-323CC139-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,OP,Yes,DOD,"LN, primary"
+1936,363719,Blood,Frozen,707CC34-20071015-Hu133.CEL,PAXgene Blood RNA kit,Nugen_FFPE,Neg,OP,Yes,DOD,lung
+1936,NA,Primary,FFPE,2007-04-24-323CC137-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,OP,Yes,DOD,lung
+2032,361256,Blood,Frozen,707CC28-20071015-Hu133.CEL,PAXgene Blood RNA kit,Nugen_FFPE,Neg,L,Yes,DOD,"LN, primary"
+2032,NA,Recurrent LN,FFPE,2007-04-24-323CC129-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,L,Yes,DOD,"LN, primary"
+124,300249-1,Primary,Frozen,2004-10-14-CHC63-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,HP,Yes,DOD,Primary
+124,300251-2,Primary,Frozen,707CC0059-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,HP,Yes,DOD,Primary
+1608,NA,Primary,FFPE,323CC164-20070829-Hu133.CEL,Ambion RecALL,Nugen_FFPE,NA,Unknown Primary,Yes,DOD,"lung, skin"
+165,NL_300591,Adjacent Normal Mucosa,Frozen,2005-02-10-CHC105-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,NA,NA,NA,NA
+182,NA,Adjacent Normal Mucosa,FFPE,323CC148-20070814-Hu133.CEL,Ambion RecALL,Nugen_FFPE,NA,NA,NA,NA,NA
+415,NA,Adjacent Normal Lung,FFPE,2007-04-24-323CC132-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,NA,NA,NA,NA,NA
+609,NA,Adjacent Normal Mucosa,FFPE,323CC145-20070814-Hu133.CEL,Ambion RecALL,Nugen_FFPE,NA,NA,NA,NA,NA
+644,NA,Adjacent Normal Mucosa,FFPE,2007-04-24-323CC124-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,NA,NA,NA,NA,NA
+1186,NA,Adjacent Normal Mucosa,FFPE,2007-04-24-323CC128-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,NA,NA,NA,NA,NA
+1228,NA,Adjacent Normal Mucosa,FFPE,323CC150-20070814-Hu133.CEL,Ambion RecALL,Nugen_FFPE,NA,NA,NA,NA,NA
+1302,NL_300132,Adjacent Normal Mucosa,Frozen,2005-02-10-CHC103-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,NA,NA,NA,NA
+1352,367508 (NL_362773),Adjacent Normal Mucosa,Frozen,706CC21-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,NA,NA,NA,NA,NA
+1352,NA,Adjacent Normal Mucosa,FFPE,323CC155-20070829-Hu133.CEL,Ambion RecALL,Nugen_FFPE,NA,NA,NA,NA,NA
+1352,NA,Adjacent Normal Mucosa,FFPE,323CC166-20070829-Hu133.CEL,Ambion RecALL,Nugen_FFPE,NA,NA,NA,NA,NA
+1356,NL_300290,Adjacent Normal Mucosa,Frozen,2005-02-10-CHC104-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,NA,NA,NA,NA
+1610,NA,Adjacent Normal Mucosa,FFPE,323CC152-20070814-Hu133.CEL,Ambion RecALL,Nugen_FFPE,NA,NA,NA,NA,NA
+2396,NA,Adjacent Normal Mucosa,FFPE,323CC163-20070905-Hu133.CEL,Ambion RecALL,Nugen_FFPE,NA,NA,NA,NA,NA
+2469,NA,Adjacent Normal Mucosa,FFPE,323CC157-20070905-Hu133.CEL,Ambion RecALL,Nugen_FFPE,NA,NA,NA,NA,NA
+2549,NA,Adjacent Normal Mucosa,FFPE,323CC160-20070905-Hu133.CEL,Ambion RecALL,Nugen_FFPE,NA,NA,NA,NA,NA
+29498,13424,Adjacent Normal Mucosa,OCT,2005-03-04-CHC135-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,NA,NA,NA,NA
+NL tonsil #1,NL tonsil #1,Normal Mucosa,Frozen,2005-02-10-CHC106-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,NA,No,NA,NA
+NL tonsil #2,NL tonsil #2,Normal Mucosa,Frozen,2005-02-10-CHC107-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,NA,No,NA,NA
+NL tonsil #3,NL tonsil #3,Normal Mucosa,Frozen,2005-02-10-CHC108-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,NA,No,NA,NA
+165,300400,Primary,Frozen,2004-10-15-CHC71-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,L,No,DOC,NA
+242,300710,Primary,Frozen,2004-10-15-CHC70-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,OC,No,NED,NA
+336,300741,Second Primary,Frozen,707CC0072-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OC,Yes,DOD,"LN, primary"
+367,300142,Primary,Frozen,2004-10-14-CHC58-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Pos,OC,No,DOC,NA
+368,300148,Primary,Frozen,2004-10-14-CHC59-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Pos,L,Yes,AWD,left axillary LN
+372,300372-1,Primary,Frozen,2004-10-15-CHC69-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,OC,No,NED,NA
+372,300372-2,Primary,Frozen,707CC0047-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OC,No,NED,NA
+415,NA,Recurrent Primary,FFPE,2007-04-24-323CC130-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,OC,Yes,DOD,"LN, primary, Lung"
+415,NA,Recurrent Lung met,FFPE,2007-04-24-323CC131-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,OC,Yes,DOD,"LN, primary, Lung"
+1208,362776,Second Primary,Frozen,707CC0069-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OP,No,NED,NA
+1218,301425,Recurrent Primary,Frozen,2006-07-11-39CC13-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,OC,Yes,NED,Primary
+1247,300228,Primary,Frozen,707CC0056-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,No,NED,NA
+1352,362773A B4 AMG,Recurrent Primary,Frozen,706CC16A-20071015-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OC,Yes,DOD,Primary
+1352,362773B B4 AMG,Recurrent Primary,Frozen,706CC16B-20071016-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OC,Yes,DOD,Primary
+1352,362804A AF AMG,Recurrent Primary,Frozen,706CC17A-20071016-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OC,Yes,DOD,Primary
+1352,362804B AF AMG,Recurrent Primary,Frozen,706CC17B-20071015-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OC,Yes,DOD,Primary
+1352,367507 AF Cet ,Recurrent Primary,Frozen,706CC20-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OC,Yes,DOD,Primary
+1352,NA,Primary,FFPE,323CC154-20070829-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Neg,OC,Yes,DOD,Primary
+1352,NA,Primary,FFPE,706CC11-20071015-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Neg,OC,Yes,DOD,Primary
+1352,NA,Recurrent Primary,FFPE,323CC165-20070829-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Neg,OC,Yes,DOD,Primary
+1352,NA,Recurrent Primary,FFPE,706CC14-20071015-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Neg,OC,Yes,DOD,Primary
+1610,NA,Primary,FFPE,323CC151-20070814-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Neg,L,Yes,DOD,lung
+1624,301185-2,Recurrent Primary,Frozen,706CC25-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OC,Yes,DOD,lung
+1624,359046-1,Recurrent Primary,Frozen,2006-01-30-345CC13-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,Yes,DOD,lung
+1624,360735,Blood,Frozen,707CC26-20071015-Hu133.CEL,PAXgene Blood RNA kit,Nugen_FFPE,Neg,OC,Yes,DOD,lung
+1624,NA,Recurrent Primary,FFPE,2007-04-24-323CC125-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,OC,Yes,DOD,lung
+2458,362806,Primary,Frozen,707CC0068-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,No,DOC,NA
+17657,10718,Primary,OCT,2005-02-23-CHC116-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+17759,10769,Primary,OCT,2005-02-23-CHC121-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+18546,11055,Primary,OCT,2005-02-04-CHC101-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+19657,11527,Primary,OCT,2005-03-03-CHC128-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+19940,11651,Primary,OCT,2005-03-03-CHC129-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+20247,11750,Primary,OCT,2005-03-11-CHC146-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+21469,11910,Primary,OCT,2005-02-23-CHC118-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+22307,12104,Primary,OCT,2005-02-04-CHC99-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+23022,12271,Primary,OCT,2005-03-03-CHC125-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+23197,NA,Primary,OCT,2005-03-04-CHC139-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+23392,12423,Primary,OCT,2005-02-18-CHC114-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+23398,12423,Primary,OCT,2005-02-18-CHC113-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+23686,12460,Primary,OCT,2005-02-18-CHC115-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+23989,12572,Primary,OCT,2005-02-04-CHC97-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+24010,12594,Primary,OCT,2005-03-11-CHC147-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+24013,12543,Primary,OCT,2005-02-23-CHC119-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+24782,12661,Primary,OCT,2005-02-04-CHC100-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+24796,12778,Primary,OCT,2005-03-04-CHC136-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+24845,12596,Primary,OCT,2005-02-23-CHC120-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+24863,12584,Primary,OCT,2005-02-23-CHC124-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+25310,12849,Primary,OCT,2005-03-11-CHC145-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+25479,12861,Primary,OCT,2005-03-11-CHC142-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+25895,12951,Primary,OCT,2005-02-04-CHC98-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+26105,13013,Primary,OCT,2005-03-11-CHC141-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+26147,13014,Primary,OCT,2005-02-23-CHC123-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+26773,13063,Primary,OCT,2005-02-18-CHC111-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+27314,13081,Primary,OCT,2005-03-03-CHC126-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+28045,13253,Primary,OCT,2005-02-18-CHC112-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+29443,13324,Primary,OCT,2005-03-11-CHC143-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+29497,13424,Primary,OCT,2005-03-04-CHC133-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+29910,13497,Primary,OCT,2005-03-03-CHC130-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+30386,13356,Primary,OCT,2005-03-03-CHC127-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+30931,13618,Primary,OCT,2005-03-04-CHC138-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+31262,13678,Primary,OCT,2005-03-03-CHC131-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+31377,13689,Primary,OCT,2005-03-04-CHC134-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+31467,13655,Primary,OCT,2005-03-11-CHC144-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+25750_1,12935_1,Primary,OCT,2005-02-04-CHC102-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+25750_2,12935_2,Primary,OCT,2005-03-11-CHC140-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,Neg,OC,NA,NA,NA
+HN02-0323B,HN02-0323B,Primary,Frozen,2004-03-19-CHC10-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_1,Neg,L,No,NED,NA
+HN02-0454B,HN02-0454B,Primary,Frozen,2004-04-23-CHC53-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,L,No,NED,NA
+HN02-0454B-2,HN02-0454B-2,Primary,Frozen,707CC0054-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,L,No,NED,NA
+HN02-0502B,HN02-0502B,Primary,Frozen,2004-04-23-CHC55-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,NA,L,No,NED,NA
+335,300688,Primary,Frozen,2004-10-15-CHC68-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,OC,No,NED,NA
+578,301016,Primary,Frozen,2006-07-11-39CC07-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,OC,No,NED,NA
+1657,359054,Primary,Frozen,707CC0064-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,No,NED,NA
+1756,301341,Primary,Frozen,706CC26-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,L,Yes,DOD,skin
+1756,361496,Blood,Frozen,707CC29-20071015-Hu133.CEL,PAXgene Blood RNA kit,Nugen_FFPE,Neg,L,Yes,DOD,skin
+1756,NA,Primary,FFPE,2007-04-24-323CC134-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,L,Yes,DOD,skin
+1831,301450,Primary,Frozen,707CC41-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OC,Yes,DOD,lung
+1831,365490,Blood,Frozen,707CC36-20071015-Hu133.CEL,PAXgene Blood RNA kit,Nugen_FFPE,Neg,OC,Yes,DOD,lung
+1831,NA,Primary,FFPE,323CC158-20070829-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Neg,OC,Yes,DOD,lung
+2649,302087,Primary,Frozen,707CC0074-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,No,NED,NA
+HN01-0393B,HN01-0393B,Primary,Frozen,2004-03-19-CHC34-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_1,Neg,OP,Yes,DOD ,lung
+HN01-0446B,HN01-0446B,Primary,Frozen,2004-04-22-CHC42-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,L,No,DOC ,NA
+HN02-0486B,HN02-0486B,Primary,Frozen,2004-04-23-CHC54-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,HP,No,NED,NA
+HN03-0034B,HN03-0034B,Primary,Frozen,2004-04-22-CHC38-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,HP,No,NED,NA
+HN03-0079B,HN03-0079B,Primary,Frozen,2004-03-19-CHC35-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_1,Neg,OC,Yes,DOD,"LN, primary"
+223,300423,Primary,Frozen,2004-10-14-CHC65-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Pos,L,No,NED,NA
+364,300663,Primary,Frozen,2004-10-15-CHC66-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,OC,Yes,NED,"LN, primary"
+365,300531-1,Primary,Frozen,2004-10-15-CHC72-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,OC,Yes,DOD,"Lung, Liver"
+365,300531-2,Primary,Frozen,707CC0048-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OC,Yes,DOD,"Lung, Liver"
+369,300430-1,Primary,Frozen,2004-10-14-CHC60-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Pos,OP,No,NED,NA
+369,300432-2,Primary,Frozen,707CC0061-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,No,NED,NA
+371,300637,Primary,Frozen,2004-10-15-CHC67-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,OC,No,DOC,NA
+644,NA,Primary,FFPE,2007-05-11-323CC117-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,OC,Yes,DOD,Skin
+750,359026,Primary,Frozen,2005-10-26-345CC10-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,OC,Yes,DOD,Lung
+797,301137,Recurrent Primary,Frozen,2006-07-11-39CC08-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,OC,Yes,DOD,Primary
+1186,361114,Blood,Frozen,707CC27-20071015-Hu133.CEL,PAXgene Blood RNA kit,Nugen_FFPE,Neg,OC,Yes,DOD,bone
+1186,NA,Primary,FFPE,2007-04-24-323CC127-Chung-Human2.0-Rep1.CEL,Ambion RecALL,Nugen_FFPE_beta,Neg,OC,Yes,DOD,bone
+1562,359037,Primary,Frozen,2006-01-30-345CC12-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,OC,No,NED,NA
+1579,359039,Primary,Frozen,2006-01-30-345CC11-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,OC,No,NED,NA
+1643,359050,Recurrent Primary,Frozen,2006-01-30-345CC14-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_3,NA,OC,Yes,DOD,"LN, primary"
+HN00-0318B,HN00-0318B,Primary,Frozen,2004-04-23-CHC49-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,L,No,NED,NA
+HN01-0291B,HN01-0291B,Primary,Frozen,2004-04-22-CHC44-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,L,Yes,DOD ,"LN, primary"
+HN01-0291B-2,HN01-0291B-2,Primary,Frozen,707CC0049-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,L,Yes,DOD ,"LN, primary"
+HN01-0394B,HN01-0394B,Primary,Frozen,2004-04-22-CHC43-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Pos,OP,No,NED,NA
+HN01-0394B-2,HN01-0394B-2,Primary,Frozen,707CC0051-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,No,NED,NA
+HN02-0136B,HN02-0136B,Primary,Frozen,2004-04-23-CHC50-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,OC,No,NED,NA
+HN02-0152B,HN02-0152B,Primary,Frozen,2004-04-22-CHC41-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,OC,No,NED,NA
+HN02-0152B-2,HN02-0152B-2,Primary,Frozen,707CC0052-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OC,No,NED,NA
+HN02-0387B,HN02-0387B,Primary,Frozen,2004-04-22-CHC40-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Pos,OP,No,NED,NA
+HN02-0421B,HN02-0421B,Primary,Frozen,2004-04-23-CHC52-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,OC,Yes,DOD ,"LN, primary"
+HN02-0478B,HN02-0478B,Primary,Frozen,2004-04-22-CHC39-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Pos,OP,Yes,AWD ,"LN, primary"
+HN02-0478B-2,HN02-0478B-2,Primary,Frozen,707CC0053-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,OP,Yes,AWD ,"LN, primary"
+HN03-0079B-2,HN03-0079B-2,Primary,Frozen,707CC0045-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OC,Yes,DOD,"LN, primary"
+HN96-0071B,HN96-0071B,Primary,Frozen,2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,NA,OC,No,DOC ,NA
+HN96-0671B,HN96-0671B,Primary,Frozen,2004-03-19-CHC37-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_1,Neg,OC,No,NED,NA
+HN96-0671B-2,HN96-0671B-2,Primary,Frozen,707CC0046-20080625-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Neg,OC,No,NED,NA
+HN97-0108B,HN97-0108B,Primary,Frozen,2004-04-22-CHC45-Chung-Human2.0-Rep1.CEL,Qiagen Rneasy,Nugen Ovation_2,Neg,OC,No,NED,NA
+48,300117,Recurrent Primary,Frozen,706CC18-20071214-Hu133.CEL,Invitrogen PureLink,Nugen_FFPE,Pos,HP,Yes,DOD,"Skin, primary"
+48,NA,Recurrent Primary,FFPE,323CC143-20070814-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Pos,HP,Yes,DOD,"Skin, primary"
+48,NA,Recurrent Primary,FFPE,323CC146-20070814-Hu133.CEL,Ambion RecALL,Nugen_FFPE,Pos,HP,Yes,DOD,"Skin, primary"
+1228,NA,Recurrent Primary,FFPE,323CC149-20070814-Hu133.CEL,Ambion RecALL,Nugen_FFPE,NA,L,Yes,DOC,NA
