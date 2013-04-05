@@ -9,7 +9,9 @@ In order to best organize code for a reproducible project, you must understand t
 
 ## Column A
 
-Because bioinformatics uses non-standard data formats with CEL files for microarrays, I create a new directory called “datasrc” that stores my code (both R code and unix commands) for obtaining the data (in this case from the Gene Expression Omnibus and directly from a collaborator) and creating an expression set. This code is only reproducible in an interactive session since it involes opening and closing R. I store the expression set I get from this process in the `data` directory. For reproducibility, I consider this data source to be the “primary” data source. If someone wants to go back to GEO, that is fine and the code is provided. But for reproducibility purposes, if someone wants to reproduce my project, this expression set of the raw data is the easiest starting point, since the entire analysis from this point forward is performed in R. Starting with munging would be starting at point A in the diagram. 
+Because bioinformatics uses non-standard data formats with CEL files for microarrays, I create a new directory called “datasrc” that stores my code (both R code and unix commands) for obtaining the data (in this case from the Gene Expression Omnibus and directly from a collaborator) and creating an expression set. This code is only reproducible in an interactive session since it involes opening and closing R. Often I will integrate this datasrc code into a README.markdown file in the data directory that explains exactly how I obtained the code.
+
+ I store the expression set I get from this process in the `data` directory. For reproducibility, I consider this data source to be the “primary” data source. If someone wants to go back to GEO, that is fine and the code is provided in the `datasrc` or README file. But for reproducibility purposes, if someone wants to reproduce my project, this expression set of the raw data is the easiest starting point, since the entire analysis from this point forward is performed in R. Starting with munging would be starting at point A in the diagram. 
 
 Now that the raw data has been stored, the next step is to preprocess it. All of the preprocessing code is stored in the `munge` directory (munge is a term for data obtaining and data cleaning). At the end of munging the data, the new preprocessed objects are cached to the `cache` directory, where they can be loaded for further analysis. The benefit of organizing the preprocessing steps this way is two-fold. First, once they are completed and the preprocessed datasets are cached, you do not need to re-run the (often time-consuming) munging step and can instead start the analysis with the cached datasets (point B in the diagram). Second, in the ProjectTemplate `config` file, you can easily toggle between having the munging step on or off. That way, if you want to rerun the analysis from scratch, you can do so. But, most of the time you will want to start from these cached datasets instead.
 
@@ -46,7 +48,7 @@ knit(paper.Rnw)
 and the fully reproducible paper is created.
 
 ## General Project Notes
-Finally, when possible, it is best to put the entire project (data and all!) on to GitHub.
+Finally, when possible, it is best to put the entire project on to GitHub. If you have very large data files (in this case I have the CEL files) it's a good idea to use the .gitignore file. Add to the file the directories you want to ignore. For files that 
 
 Ideally, when this system is working, the reproduction of a paper is almost effortless. If someone wants to play around with your data and results, they need simply clone the project to their comptuer. Then, they just open an R session, set the working directory to the home directory of the cloned project, and run 
 
