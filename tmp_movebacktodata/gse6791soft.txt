@@ -1,0 +1,85 @@
+Tissue ID 	Case 	Source 	HPV 	LCM 	Anatomical sites 	Gender 	Age 	Histological grade 	Stage 	Metastasis 	Accession number
+CC010 	Cervical cancer 	Gynecologic Oncology Group 	+ (31) 	Yes 	Cervix 	Female 	35 	Well/moderately 	II 	No 	GSM155645 
+CC028 	Cervical cancer 	Gynecologic Oncology Group 	+ (16) 	No 	Cervix 	Female 	27 	Well/moderately 	IB2 	Yes 	GSM155646 
+CC029 	Cervical cancer 	Gynecologic Oncology Group 	+ (18) 	Yes 	Cervix 	Female 	40 	Well/moderately 	IB 	No 	GSM155647 
+CC034A 	Cervical cancer 	Gynecologic Oncology Group 	+ (18) 	Yes 	Cervix 	Female 	42 	Poorly/undiffer 	IB 	No 	GSM155648 
+CC034B 	Cervical cancer 	Gynecologic Oncology Group 	+ (58) 	No 	Cervix 	Female 	44 	Poorly/undiffer 	II/III 	No 	GSM155649 
+CC068 	Cervical cancer 	Gynecologic Oncology Group 	+ (35) 	No 	Cervix 	Female 	41 	Poorly/undiffer 	IB 	Yes 	GSM155650 
+CC205 	Cervical cancer 	Gynecologic Oncology Group 	+ (16) 	Yes 	Cervix 	Female 	57 	Well/moderately 	IB 	No 	GSM155651 
+CC225 	Cervical cancer 	Gynecologic Oncology Group 	+ (16) 	Yes 	Cervix 	Female 	44 	Well/moderately 	IV 	ND 	GSM155652 
+CC233 	Cervical cancer 	Gynecologic Oncology Group 	-	Yes 	Cervix 	Female 	44 	Well/moderately 	IB 	No 	GSM155653 
+CC237 	Cervical cancer 	Gynecologic Oncology Group 	+ (16) 	No 	Cervix 	Female 	25 	Well/moderately 	IB 	No 	GSM155654 
+CC243 	Cervical cancer 	Gynecologic Oncology Group 	-	No 	Cervix 	Female	 30 	Poorly/undiffer 	IB2 	No 	GSM155655 
+CC300 	Cervical cancer 	Gynecologic Oncology Group 	+ (18) 	Yes 	Cervix 	Female 	47 	Poorly/undiffer 	IB2 	No 	GSM155656 
+CC304 	Cervical cancer 	Gynecologic Oncology Group 	+ (33) 	No 	Cervix 	Female 	63 	Poorly/undiffer 	IB 	No 	GSM155657 
+CC437 	Cervical cancer 	Gynecologic Oncology Group 	+ (16) 	No 	Cervix 	Female 	38 	Poorly/undiffer 	IB 	No 	GSM155658 
+CC507 	Cervical cancer 	Gynecologic Oncology Group 	+ (16) 	No 	Cervix 	Female 	52 	Poorly/undiffer 	IIIB 	Yes 	GSM155659 
+CC515 	Cervical cancer 	Gynecologic Oncology Group 	+ (16) 	Yes 	Cervix 	Female 	38 	Poorly/undiffer 	IB2 	No 	GSM155660 
+CC519 	Cervical cancer 	Gynecologic Oncology Group 	+ (16) 	Yes 	Cervix 	Female 	48 	Well/moderately 	IB2 	No 	GSM155661 
+CC553 	Cervical cancer 	Gynecologic Oncology Group 	+ (35) 	Yes 	Cervix 	Female 	53 	Poorly/undiffer 	IB 	No 	GSM155662 
+CC600 	Cervical cancer 	Gynecologic Oncology Group 	+ (66) 	No 	Cervix 	Female 	55 	Poorly/undiffer 	IB1 	No 	GSM155663 
+CC701 	Cervical cancer 	Gynecologic Oncology Group 	-	Yes 	Cervix 	Female 	26 	Poorly/undiffer 	IB2 	Yes 	GSM155664 
+CN001 	Cervical normal 	Gynecologic Oncology Group 	-	Yes 	Cervix 	Female 	35 	-	-	-	GSM155665 
+CN018 	Cervical normal 	Gynecologic Oncology Group 	-	Yes 	Cervix 	Female 	44 	-	-	-	GSM155666 
+CN022 	Cervical normal 	Gynecologic Oncology Group 	-	Yes 	Cervix 	Female 	45 	-	-	-	GSM155667 
+CN206 	Cervical normal 	Gynecologic Oncology Group 	-	Yes 	Cervix 	Female 	66 	-	-	-	GSM155668 
+CN243 	Cervical normal 	Gynecologic Oncology Group 	-	Yes 	Cervix 	Female 	43 	-	-	-	GSM155669 
+CN407 	Cervical normal 	Gynecologic Oncology Group 	-	Yes 	Cervix 	Female 	56 	-	-	-	GSM155670 
+CN530 	Cervical normal 	Gynecologic Oncology Group 	-	Yes 	Cervix 	Female 	48 	-	-	-	GSM155671 
+CN543 	Cervical normal 	Gynecologic Oncology Group 	-	Yes 	Cervix 	Female 	43 	-	-	-	GSM155672 
+HNC001 	HN cancer 	U. Iowa 	-	Yes 	Oral Cavity 	Male 	57 	Well/moderately 	IV 	ND 	GSM155674 
+HNC004 	HN cancer 	U. Iowa 	-	Yes 	Oral Cavity 	Male 	64 	Well/moderately 	IV 	ND 	GSM155673 
+HNC005 	HN cancer 	U. Iowa 	+ (16) 	No 	Oropharynx 	Male 	44 	Poorly/undiffer 	IV 	ND 	GSM155675 
+HNC008 	HN cancer 	U. Iowa 	+ (16) 	No 	Oropharynx 	Female 	57 	Poorly/undiffer 	III 	ND 	GSM155676 
+HNC009 	HN cancer 	U. Iowa 	+ (16) 	Yes 	Oropharynx 	Female 	50 	Well/moderately 	III 	ND 	GSM155677 
+HNC012 	HN cancer 	U. Iowa 	+ (16) 	No 	Oropharynx 	Male 	59 	Poorly/undiffer 	IV 	ND 	GSM155678 
+HNC015 	HN cancer 	U. Iowa 	-	Yes 	ND 	ND 	ND 	ND 	ND 	ND 	GSM155679 
+HNC017 	HN cancer 	U. Iowa 	-	Yes 	Tonsil 	Male 	54 	Well/moderately 	IV 	ND 	GSM155680 
+HNC018 	HN cancer 	U. Iowa 	-	Yes 	Tonsil 	Female 	57 	Well/moderately 	IV 	ND 	GSM155681 
+HNC2551 	HN cancer 	Harvard 	+ (18) 	Yes 	Tongue 	Female 	85 	Well/moderately 	I 	No 	GSM155682 
+HNC2686 	HN cancer 	Harvard 	-	No 	Tongue 	Female 	68 	Well/moderately 	ND 	ND 	GSM155683 
+HNC2714 	HN cancer 	Harvard 	-	Yes 	Tongue 	Male 	76 	Well/moderately 	ND 	ND 	GSM155684 
+HNC2719 	HN cancer 	Harvard 	+ (16) 	No 	Tongue 	Male 	58 	Poorly/undiffer 	I 	No 	GSM155685 
+HNC2724 	HN cancer 	Harvard 	-	No 	Mouth 	Female 	58 	ND 	ND 	ND 	GSM155686 
+HNC2725 	HN cancer 	Harvard 	+ (33) 	Yes 	Tongue 	Male 	69 	Well/moderately 	ND 	ND 	GSM155687 
+HNC2738 	HN cancer 	Harvard 	-	No 	Floor of mouth 	Male 	50 	Poorly/undiffer 	III 	ND 	GSM155688 
+HNC2743 	HN cancer 	Harvard 	-	Yes 	Tongue 	Female 	32 	Well/moderately 	ND 	ND 	GSM155689 
+HNC2748 	HN cancer 	Harvard 	-	Yes 	Tongue 	Male 	65 	Well/moderately 	III 	No 	GSM155690 
+HNC2774 	HN cancer 	Harvard 	-	Yes 	Oropharynx 	Male 	66 	Poorly/undiffer 	II 	ND 	GSM155691 
+HNC2784 	HN cancer 	Harvard 	+ (16) 	Yes 	Hypopharynx 	Male 	53 	Poorly/undiffer 	ND 	ND 	GSM155692 
+HNC2814 	HN cancer 	Harvard 	-	Yes 	Tongue 	Male 	54 	Well/moderately 	ND 	ND 	GSM155693 
+HNC2816 	HN cancer 	Harvard 	-	No 	Floor of mouth 	Male 	57 	Well/moderately 	ND 	ND 	GSM155694 
+HNC2836 	HN cancer 	Harvard 	-	No 	Tongue 	Male 	84 	Well/moderately 	ND 	ND 	GSM155695 
+HNC2855 	HN cancer 	Harvard 	-	No 	Mouth 	Female 	69 	Well/moderately 	ND 	ND 	GSM155696 
+HNC2857 	HN cancer 	Harvard 	-	Yes 	Larynx 	Male 	68 	ND 	III 	ND 	GSM155697 
+HNC2885 	HN cancer 	Harvard 	-	Yes 	Tongue 	Female 	54 	ND 	ND 	ND 	GSM155698 
+HNC2887 	HN cancer 	Harvard 	+ (33) 	Yes 	Floor of mouth 	Male 	76 	Poorly/undiffer 	II 	No 	GSM155699 
+HNC2907 	HN cancer 	Harvard 	-	Yes 	Larynx 	Male 	76 	Well/moderately 	ND 	ND 	GSM155700 
+HNC2910 	HN cancer 	Harvard 	-	No 	Tongue 	Male 	67 	Well/moderately 	ND 	ND 	GSM155701 
+HNC2914 	HN cancer 	Harvard 	+ (16) 	Yes 	Pharynx 	Male 	53 	ND 	II 	No 	GSM155702 
+HNC2942 	HN cancer 	Harvard 	+ (16) 	Yes 	Oropharynx 	Male 	56 	Poorly/undiffer 	III 	No 	GSM155703 
+HNC2966 	HN cancer 	Harvard 	-	Yes 	Tongue 	Male 	55 	Well/moderately 	ND 	ND 	GSM155704 
+?HNC2967 	HN cancer 	Harvard 	-	Yes 	Floor of mouth 	ND 	ND ND 	Well/moderately	 ND 	ND 	GSM155705 
+HNC3003 	HN cancer 	Harvard 	-	No 	Tongue 	Female 	74 	ND 	ND 	ND 	GSM155706 
+HNC3046 	HN cancer 	Harvard 	+ (16) 	Yes 	Tongue 	Male 	56 	Well/moderately 	II 	No 	GSM155707 
+HNC3055 	HN cancer 	U. Iowa 	-	Yes 	Tonsil 	Male 	74 	Well/moderately 	IV 	ND 	GSM155708 
+HNC3092 	HN cancer 	U. Iowa 	+ (16) 	No 	Tongue 	Male 	37 	Well/moderately 	IV 	ND 	GSM155709 
+HNC3687 	HN cancer 	Harvard 	-	No 	Floor of mouth 	Female 	54 	Well/moderately 		ND 	GSM155710 
+HNCB1 	HN cancer 	U. Iowa 	+ (16) 	Yes 	Tonsil 	Male 	50 	Well/moderately 	IV 	ND 	GSM155711 
+HNCS1 	HN cancer 	U. Iowa 	-	Yes 	Hypopharynx 	Male 	56 	Well/moderately 	III 	ND 	GSM155712 
+HNCS2 	HN cancer 	U. Iowa 	+ (16) 	Yes 	Tonsil 	Male 	64 	Poorly/undiffer 	IV 	ND 	GSM155713 
+HNCS3 	HN cancer 	U. Iowa 	+ (16) 	Yes 	Tonsil 	Male 	62 	Well/moderately 	III 	ND 	GSM155714 
+HNN013 	HN normal 	U. Iowa 	-	Yes 	Tonsil 	Female 	20 	-	-	-	GSM155715 
+HNN023 	HN normal 	U. Iowa 	-	Yes 	Uvula and palate 	Female 	24 	-	-	-	GSM155716 
+HNN039 	HN normal 	U. Iowa 	-	Yes 	Tonsil 	Male 	66 	-	-	-	GSM155717 
+HNN052 	HN normal 	U. Iowa 	-	Yes 	Tonsil 	Male 	47 	-	-	-	GSM155718 
+HNN053 	HN normal 	U. Iowa 	-	Yes 	Tonsil 	Female 	18 	-	-	-	GSM155719 
+ND004 	HN normal 	National Disease Research Interchange 	-	Yes 	Oral Cavity 	Female 	76 	-	-	-	GSM155720 
+ND007 	HN normal 	National Disease Research Interchange 	-	Yes 	Oral Cavity 	Female 	77 	-	-	-	GSM155721 
+ND010 	HN normal 	National Disease Research Interchange 	-	Yes 	Oral Cavity 	Male 	55 	-	-	-	GSM155722 
+ND011 	HN normal 	National Disease Research Interchange 	-	Yes 	Oral Cavity 	Male 	62 	-	-	-	GSM155723 
+ND012 	HN normal 	National Disease Research Interchange 	-	Yes 	Oral Cavity 	Female 	63 	-	-	-	GSM155724 
+ND014 	HN normal 	National Disease Research Interchange 	-	Yes 	Oral Cavity 	Female 	88 	-	-	-	GSM155725 
+ND015 	HN normal 	National Disease Research Interchange 	-	Yes 	Oral Cavity 	Female 	54 	-	-	-	GSM155726 
+ND017 	HN normal 	National Disease Research Interchange 	-	Yes 	Oral Cavity 	Male 	84 	-	-	-	GSM155727 
+ND018 	HN normal 	National Disease Research Interchange 	-	Yes 	Oral Cavity 	Female 	81 	-	-	-	GSM155728 
