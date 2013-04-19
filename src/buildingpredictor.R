@@ -1,38 +1,66 @@
 
-qrsh -l mem_free=10G,h_vmem=12G
-
-home<-"/home/bst/student/hiparker/HeadNeck"
-setwd(home)
+setwd("/home/bst/student/hiparker/HeadNeck")
 library("ProjectTemplate")
 load.project()
 
-# first things first -- organize code
+## put things into easier names
+dat <- frma.chung
+out <- as.factor(info.chung$HPV.Stat)
 
-# Use project Template
-
-
-
-## visualize data before, pick batch based on this 
-
-cols <- brewer.pal(8, "Reds")
-cols<-rev(cols)
-
-setwd("./graphs")
-
-pdf(file="chung.pdf")
-manyboxplot(frma.chung,dotcol=cols[1],linecol=cols[2:4],vlines=c(34.5,54.5),main="fRMA only")
-manyboxplot(combat.frma.chung,dotcol=cols[1],linecol=cols[2:4],vlines=c(34.5,54.5),main="ComBat")
-manyboxplot(sva.frma.chung,dotcol=cols[1],linecol=cols[2:4],vlines=c(34.5,54.5),main="SVA")
-manyboxplot(sva.combat.frma.chung,dotcol=cols[1],linecol=cols[2:4],vlines=c(34.5,54.5),main="SVA + ComBat")
-dev.off()
-
-# code for batch correction
-
-# ComBat first
-# then go to SVA
+# total number of samples
+n <- dim(dat)[2]
 
 
-# creating a predictor #
+## to be reproducible, always set the seed. 
+## The ensures that you pull the same "random" set next time.
+set.seed(12345)
 
-#divide into test, training sets
+# number of iterations, i.e. number of times I'll create training and testing sets.
+n.it<-100
 
+# number of samples in training and testing sets (half of total sample size)
+simsize<-43
+
+# creating vectors for storing accuracy results
+fast.out<-rep(0,n.it)
+exact.out<-rep(0,n.it)
+none.out<-rep(0,n.it)
+
+# create a vector that will be used to create the training, testing sets. 
+# (2's are created in case there are some samples that will be left out)
+tmp<-c(rep(2,n-2*simsize),rep(0,simsize),rep(1,simsize))
+
+for(s in 1:n.it){
+	print(s)
+	# create random database vs. new samples index #
+	ind<-sample(tmp,n,replace=FALSE)
+
+	# sort into lists for later use #
+	db.dat<-dat[,ind==0]
+	db.out<-out[ind==0]
+	newsamp.dat<-dat[,ind==1]
+	newsamp.out<-out[ind==1]
+
+	# run sva on the database (will be used later in fsva) #
+	mod<-model.matrix(~as.factor(db.out))
+	db.sva<-sva(db.dat,mod)
+
+	fsva.res <- fsva(dbdat=db.dat, mod=mod, sv=db.sva, newdat=newsamp.dat, method="exact")	
+	fast.fsva.res <- fsva(dbdat=db.dat, mod=mod, sv=db.sva, newdat=newsamp.dat, 
+							 method="fast")
+
+	# uncorrected #
+
+	none.out[s] <- predictor_PAM(train.dat=db.dat, train.grp=db.out,
+				   test.dat=newsamp.dat, test.grp=newsamp.out)
+
+	exact.out[s] <- predictor_PAM(train.dat=fsva.res$db, train.grp=db.out,
+					test.dat=fsva.res$new, test.grp=newsamp.out)
+
+	fast.out[s] <- predictor_PAM(train.dat=fast.fsva.res$db, train.grp=db.out,
+				   test.dat=fast.fsva.res$new, test.grp=newsamp.out)
+}
+
+predictor_results<-list(fast.out=fast.out,exact.out=exact.out,none.out=none.out,
+				  simsize=simsize,n.it=n.it)
+ProjectTemplate::cache("predictor_results")

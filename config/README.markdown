@@ -16,6 +16,8 @@ biocLite("limma")
 biocLite("simpleaffy")
 biocLite("geneplotter")
 biocLite("hgu133plus2frmavecs")
+biocLite("pamr")
+
 ```
 
 ## CRAN

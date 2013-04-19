@@ -1,0 +1,197 @@
+
+R version 3.0.0 Patched (2013-04-17 r62607) -- "Masked Marvel"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-unknown-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> 
+> setwd("/home/bst/student/hiparker/HeadNeck")
+> library("ProjectTemplate")
+Loading required package: testthat
+> load.project()
+Loading project configuration
+Autoloading helper functions
+ Running helper script: ComBat_numerical_confound_multibatch.R
+ Running helper script: manyboxplot.R
+ Running helper script: predictor_PAM.R
+Autoloading packages
+ Loading package: affy
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: 'BiocGenerics'
+
+The following objects are masked from 'package:parallel':
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following object is masked from 'package:stats':
+
+    xtabs
+
+The following objects are masked from 'package:base':
+
+    anyDuplicated, as.data.frame, cbind, colnames, duplicated, eval,
+    Filter, Find, get, intersect, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rep.int, rownames, sapply, setdiff, sort, table,
+    tapply, union, unique, unlist
+
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: 'Biobase'
+
+The following object is masked from 'package:ProjectTemplate':
+
+    cache
+
+ Loading package: frma
+ Loading package: sva
+Loading required package: corpcor
+Loading required package: mgcv
+This is mgcv 1.7-22. For overview type 'help("mgcv-package")'.
+
+Attaching package: 'sva'
+
+The following object is masked _by_ '.GlobalEnv':
+
+    ComBat
+
+ Loading package: pamr
+Loading required package: cluster
+Loading required package: survival
+Loading required package: splines
+ Loading package: genefilter
+ Loading package: hgu133plus2.db
+Loading required package: AnnotationDbi
+Loading required package: org.Hs.eg.db
+Loading required package: DBI
+
+
+ Loading package: limma
+ Loading package: simpleaffy
+Loading required package: gcrma
+No methods found in "Biobase" for requests: geneNames
+
+Attaching package: 'simpleaffy'
+
+The following object is masked from 'package:survival':
+
+    tt
+
+ Loading package: GSA
+ Loading package: geneplotter
+Loading required package: annotate
+Loading required package: lattice
+ Loading package: hgu133plus2frmavecs
+ Loading package: devtools
+ Loading package: broman
+
+Attaching package: 'broman'
+
+The following object is masked _by_ '.GlobalEnv':
+
+    manyboxplot
+
+The following object is masked from 'package:affy':
+
+    normalize
+
+ Loading package: RColorBrewer
+ Loading package: markdown
+Autoloading cache
+ Loading cached data set: c2Sets
+ Loading cached data set: combat.frma.chung
+ Loading cached data set: combat.frma.res
+ Loading cached data set: combat.frma.tab
+ Loading cached data set: frma.chung
+ Loading cached data set: frma.res
+ Loading cached data set: frma.tab
+ Loading cached data set: info.chung
+ Loading cached data set: predictor.results
+ Loading cached data set: sva.combat.frma.chung
+ Loading cached data set: sva.combat.frma.res
+ Loading cached data set: sva.combat.frma.tab
+ Loading cached data set: sva.frma.chung
+ Loading cached data set: sva.frma.res
+ Loading cached data set: sva.frma.tab
+> 
+> ## put things into easier names
+> dat <- frma.chung
+> out <- as.factor(info.chung$HPV.Stat)
+> 
+> # total number of samples
+> n <- dim(dat)[2]
+> 
+> 
+> ## to be reproducible, always set the seed. 
+> ## The ensures that you pull the same "random" set next time.
+> set.seed(12345)
+> 
+> # number of iterations, i.e. number of times I'll create training and testing sets.
+> n.it<-100
+> 
+> # number of samples in training and testing sets (half of total sample size)
+> simsize<-43
+> 
+> # creating vectors for storing accuracy results
+> fast.out<-rep(0,n.it)
+> exact.out<-rep(0,n.it)
+> none.out<-rep(0,n.it)
+> 
+> # create a vector that will be used to create the training, testing sets. 
+> # (2's are created in case there are some samples that will be left out)
+> tmp<-c(rep(2,n-2*simsize),rep(0,simsize),rep(1,simsize))
+> 
+> for(s in 1:n.it){
++ 	print(s)
++ 	# create random database vs. new samples index #
++ 	ind<-sample(tmp,n,replace=FALSE)
++ 
++ 	# sort into lists for later use #
++ 	db.dat<-dat[,ind==0]
++ 	db.out<-out[ind==0]
++ 	newsamp.dat<-dat[,ind==1]
++ 	newsamp.out<-out[ind==1]
++ 
++ 	# run sva on the database (will be used later in fsva) #
++ 	mod<-model.matrix(~as.factor(db.out))
++ 	db.sva<-sva(db.dat,mod)
++ 
++ 	fsva.res <- fsva(dbdat=db.dat, mod=mod, sv=db.sva, newdat=newsamp.dat, method="exact")	
++ 	fast.fsva.res <- fsva(dbdat=db.dat, mod=mod, sv=db.sva, newdat=newsamp.dat, 
++ 							 method="fast")
++ 
++ 	# uncorrected #
++ 
++ 	none.out[s] <- predictor_PAM(train.dat=db.dat, train.grp=db.out,
++ 				   test.dat=newsamp.dat, test.grp=newsamp.out)
++ 
++ 	exact.out[s] <- predictor_PAM(train.dat=fsva.res$db, train.grp=db.out,
++ 					test.dat=fsva.res$new, test.grp=newsamp.out)
++ 
++ 	fast.out[s] <- predictor_PAM(train.dat=fast.fsva.res$db, train.grp=db.out,
++ 				   test.dat=fast.fsva.res$new, test.grp=newsamp.out)
++ }
+[1] 1
