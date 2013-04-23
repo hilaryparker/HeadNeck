@@ -1,6 +1,6 @@
-data_loading: off
-cache_loading: on
-munging: off
+data_loading: on
+cache_loading: off
+munging: on
 logging: off
 load_libraries: on
 libraries: affy, frma, sva, pamr, genefilter, hgu133plus2.db, limma, simpleaffy, GSA, geneplotter, hgu133plus2frmavecs, devtools, broman, RColorBrewer, markdown
