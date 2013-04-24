@@ -15,24 +15,41 @@ fsva.sva.combat.frma <- fsva(dbdat=combat.frma.chung, mod=mod, sv=sva.combat.frm
 fit <- pamr.train(list(x=frma.chung,y=as.factor(info.chung$HPV.Stat)))
 pred.none <- pamr.predict(fit,frma.chung.naHPV,threshold=2)
 
+# combat on database only
+fit <- pamr.train(list(x=combat.frma.chung,y=as.factor(info.chung$HPV.Stat)))
+pred.combat <- pamr.predict(fit,frma.chung.naHPV,threshold=2)
+
 # combat + fsva correction
 fit <- pamr.train(list(x=combat.frma.chung,y=as.factor(info.chung$HPV.Stat)))
 pred.combat.fsva <- pamr.predict(fit,fsva.sva.frma$new,threshold=2)
 
+# sva on database only
+fit <- pamr.train(list(x=fsva.sva.frma$db,y=as.factor(info.chung$HPV.Stat)))
+pred.sva <- pamr.predict(fit,frma.chung.naHPV,threshold=2)
+
 # sva + fsva correction
 fit <- pamr.train(list(x=fsva.sva.frma$db,y=as.factor(info.chung$HPV.Stat)))
 pred.sva.fsva <- pamr.predict(fit,fsva.sva.frma$new,threshold=2)
+
+# sva + combat on database only
+fit <- pamr.train(list(x=fsva.sva.combat.frma$db,y=as.factor(info.chung$HPV.Stat)))
+pred.sva.combat <- pamr.predict(fit,frma.chung.naHPV,threshold=2)
 
 # sva + combat + fsva correction
 fit <- pamr.train(list(x=fsva.sva.combat.frma$db,y=as.factor(info.chung$HPV.Stat)))
 pred.sva.combat.fsva <- pamr.predict(fit,fsva.sva.combat.frma$new,threshold=2)
 
 
-predictions<-cbind(as.character(pred.none), as.character(pred.combat.fsva), as.character(pred.sva.fsva),as.character(pred.sva.combat.fsva))
-rownames(predictions)<-info.chung.naHPV$Affy.Microarray
-colnames(predictions)<-c("None","ComBat+fSVA","SVA+fSVA","ComBat+SVA+fSVA")
+predictions_nofSVA<-cbind(as.character(pred.none), as.character(pred.combat), as.character(pred.sva),as.character(pred.sva.combat))
+rownames(predictions_nofSVA)<-info.chung.naHPV$Affy.Microarray
+colnames(predictions_nofSVA)<-c("None","ComBat","SVA","ComBat+SVA")
 
-ProjectTemplate::cache("predictions")
+predictions_fSVA<-cbind(as.character(pred.none), as.character(pred.combat.fsva), as.character(pred.sva.fsva),as.character(pred.sva.combat.fsva))
+rownames(predictions_fSVA)<-info.chung.naHPV$Affy.Microarray
+colnames(predictions_fSVA)<-c("None","ComBat+fSVA","SVA+fSVA","ComBat+SVA+fSVA")
+
+ProjectTemplate::cache("predictions_nofSVA")
+ProjectTemplate::cache("predictions_fSVA")
 
 # in markdown document, write 
 # print(xtable(predictions), type='html')

@@ -214,11 +214,11 @@ Now, in our case we had six samples that had no information as to their HPV stat
 
 
 ```r
-print(xtable(predictions), type = "html")
+print(xtable(predictions_fSVA), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Wed Apr 24 17:34:46 2013 -->
+<!-- Wed Apr 24 18:14:29 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+fSVA </TH> <TH> SVA+fSVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
