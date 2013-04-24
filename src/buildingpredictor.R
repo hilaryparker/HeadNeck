@@ -4,7 +4,7 @@ library("ProjectTemplate")
 load.project()
 
 ## put things into easier names
-dat <- frma.chung
+dat <- combat.frma.chung
 out <- as.factor(info.chung$HPV.Stat)
 
 # total number of samples
@@ -16,15 +16,15 @@ n <- dim(dat)[2]
 set.seed(12345)
 
 # number of iterations, i.e. number of times I'll create training and testing sets.
-n.it<-100
+n.it<-2
 
 # number of samples in training and testing sets (half of total sample size)
 simsize<-43
 
 # creating vectors for storing accuracy results
 fast.out<-rep(0,n.it)
-exact.out<-rep(0,n.it)
-none.out<-rep(0,n.it)
+dbonly.out<-rep(0,n.it)
+dbfsva.out<-rep(0,n.it)
 
 # create a vector that will be used to create the training, testing sets. 
 # (2's are created in case there are some samples that will be left out)
@@ -54,13 +54,13 @@ for(s in 1:n.it){
 	none.out[s] <- predictor_PAM(train.dat=db.dat, train.grp=db.out,
 				   test.dat=newsamp.dat, test.grp=newsamp.out)
 
-	exact.out[s] <- predictor_PAM(train.dat=fsva.res$db, train.grp=db.out,
-					test.dat=fsva.res$new, test.grp=newsamp.out)
+	dbonly.out[s] <- predictor_PAM(train.dat=fsva.res$db, train.grp=db.out,
+					test.dat=newsamp.dat, test.grp=newsamp.out)
 
-	fast.out[s] <- predictor_PAM(train.dat=fast.fsva.res$db, train.grp=db.out,
+	dbfsva.out[s] <- predictor_PAM(train.dat=fast.fsva.res$db, train.grp=db.out,
 				   test.dat=fast.fsva.res$new, test.grp=newsamp.out)
 }
 
-predictor_results<-list(fast.out=fast.out,exact.out=exact.out,none.out=none.out,
+predictor_results<-list(none.out=none.out,dbonly.out=dbonly.out,dbfsva.out=dbfsva.out,
 				  simsize=simsize,n.it=n.it)
 ProjectTemplate::cache("predictor_results")
