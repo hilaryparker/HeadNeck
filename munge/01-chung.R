@@ -35,8 +35,8 @@ frma.chung <- frma.chung[,-c(grep("Normal",info.chung$Tumor.Source))]
 info.chung <- info.chung[-c(grep("Normal",info.chung$Tumor.Source)),]
 
 ## save set with unlabeled HPV samples to predict later ##
-frma.chung.naHPV <- frma.chung
-info.chung.naHPV <- info.chung
+frma.chung.naHPV <- frma.chung[,is.na(info.chung$HPV.Stat)]
+info.chung.naHPV <- info.chung[is.na(info.chung$HPV.Stat),]
 ProjectTemplate::cache('info.chung.naHPV')
 ProjectTemplate::cache('frma.chung.naHPV')
 
