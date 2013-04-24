@@ -3,25 +3,34 @@ setwd("/home/bst/student/hiparker/HeadNeck")
 library("ProjectTemplate")
 load.project()
 
-# combat.frma.chung
-fit <- pamr.train(list(x=combat.frma.chung,y= info.chung$HPV.Stat))
-pred.combat <- pamr.predict(fit,frma.chung.naHPV,threshold=2)
+# run sva on the database (will be used later in fsva) #
+mod<-model.matrix(~as.factor(info.chung$HPV.Stat))
+sva.frma<-sva(frma.chung,mod)
+sva.combat.frma<-sva(combat.frma.chung,mod)
 
-# sva.frma.chung
-fit <- pamr.train(list(x=sva.frma.chung,y= info.chung$HPV.Stat))
-pred.sva <- pamr.predict(fit,frma.chung.naHPV,threshold=2)
+fsva.sva.frma <- fsva(dbdat=frma.chung, mod=mod, sv=sva.frma, newdat=frma.chung.naHPV, method="exact")	
+fsva.sva.combat.frma <- fsva(dbdat=combat.frma.chung, mod=mod, sv=sva.combat.frma, newdat=frma.chung.naHPV, method="exact")	
 
-# sva.combat.frma.chung
-fit <- pamr.train(list(x=sva.combat.frma.chung,y= info.chung$HPV.Stat))
-pred.sva.combat <- pamr.predict(fit,frma.chung.naHPV,threshold=2)
+# no batch correction
+fit <- pamr.train(list(x=frma.chung,y=as.factor(info.chung$HPV.Stat)))
+pred.none <- pamr.predict(fit,frma.chung.naHPV,threshold=2)
+
+# combat + fsva correction
+fit <- pamr.train(list(x=combat.frma.chung,y=as.factor(info.chung$HPV.Stat)))
+pred.combat.fsva <- pamr.predict(fit,fsva.sva.frma$new,threshold=2)
+
+# sva + fsva correction
+fit <- pamr.train(list(x=fsva.sva.frma$db,y=as.factor(info.chung$HPV.Stat)))
+pred.sva.fsva <- pamr.predict(fit,fsva.sva.frma$new,threshold=2)
+
+# sva + combat + fsva correction
+fit <- pamr.train(list(x=fsva.sva.combat.frma$db,y=as.factor(info.chung$HPV.Stat)))
+pred.sva.combat.fsva <- pamr.predict(fit,fsva.sva.combat.frma$new,threshold=2)
 
 
-# given both the improvement in the prediction accuracy using SVA, as well as
-# the improvement in the boxplots, I am going with sva results.
-
-predictions<-cbind(as.character(pred.combat), as.character(pred.sva), as.character(pred.sva.combat))
+predictions<-cbind(as.character(pred.none), as.character(pred.combat.fsva), as.character(pred.sva.fsva),as.character(pred.sva.combat.fsva))
 rownames(predictions)<-info.chung.naHPV$Affy.Microarray
-colnames(predictions)<-c("ComBat","SVA","SVA and ComBat")
+colnames(predictions)<-c("None","ComBat+fSVA","SVA+fSVA","ComBat+SVA+fSVA")
 
 ProjectTemplate::cache("predictions")
 

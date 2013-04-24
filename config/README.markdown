@@ -34,4 +34,5 @@ install.packages("GSA")
 ```{r}
 library(devtools)
 install_github("broman","kbroman")
+```
 
