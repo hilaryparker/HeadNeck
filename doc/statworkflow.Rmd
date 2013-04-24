@@ -164,3 +164,16 @@ Here are the SVA-Combat plots
 ```{r svacombat}
 manyboxplot(sva.combat.frma.chung,dotcol=cols[1],linecol=cols[2:4],vlines=c(34.5,54.5),main="SVA + ComBat")
 ```
+
+
+
+## Prediction
+Being able to predict an outcome of interest in a new sample is a major reason why we research genetic diseases. In this case, the outcome we care about is the HPV status. There were six samples in this case that did not have a reported HPV status. Below I will walk through how to build a predictor in order to identify the HPV status for these six samples.
+
+Above we gave motivation for why batch correction helped normalize the expression levels in different arrays. Now we'd like to convince you that this batch correction will help in prediction problems.
+
+
+
+
+
+Now, in our case we had six samples that had no information as to their HPV statuses. Below is a 
