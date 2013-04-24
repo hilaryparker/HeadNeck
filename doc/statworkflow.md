@@ -77,124 +77,22 @@ load.project()
 
 
 
-## Preprocessing 
-An important first step in any microarray analysis is preprocessing. I strongly encourage you to use fRMA for several reasons. It quantile-normalized across an established and curated database of several thousand arrays. Other preprocessing techniques generally use only the arrays within the study. Besides the robustness of this, there is also a practical advantage for this for our purposes. In this workflow of building and validating a predictor, we will separate datasets into build and test sets several times. By using fRMA preprocessing, no matter how we subset the data, it will always be preprocessed the same (because of the fact that it uses the established database, rather than the specific study, to do the quantile-normalization). Therefore, this greatly reduces both the computational time and the confusion for preprocessing data. It can simply be preprocessed during the munging process. If you chose to use a preprocessing technique other than fRMA, you will need to preprocess your data every time you create a training or test set (and thus remove the preprocessing step from the `munge` directory and integrate it into the `src` code every time you create a subset of the data).
-
-The code for preprocessing the data using frma is quite simple:
 
 
-```r
-frma.chung <- frma(dat.chung)
-```
 
 
-## Motivating Batch Correction
-
-Sometimes it is difficult to figure out which biological variables you should treat as batch variables, and which you should not. For example, in this dataset there are several variables that could be important. When you have a dataset with rich annotation data, a multi-faceted approach is appropriate.
-
-First, we chose to ignore variables that we had reason to believe would be so biologically different from other samples that they would only confuse, rather than help, the analysis. These samples were removed during the `munge` phase and aren't present in the cached preprocessed datasets. In this head and neck cancer set, we removed blood samples and normal non-cancer samples.
-
-After this, though, we had several variables remaining. Amplification kit, procurement kit, etc. At this stage, some data visualization can be very helpful. 
-
-I am borrowing a plot from Karl Broman -- essentially, this is a way to summarize the data quickly, in a way that lends itself to seeing relationship between items. This graphic simply connects the quantiles of each sample (along the x-axis). It is equivalent to looking at many boxplots next to each other.
-
-(Side note -- RColorBrewer is a great way to get nice colors for your figures)
-
-```r
-cols <- brewer.pal(8, "Reds")
-cols <- rev(cols)
-```
 
 
-I first looked at the data without any batch correction:
 
 
-```r
-manyboxplot(frma.chung, dotcol = cols[1], linecol = cols[2:4], vlines = c(34.5, 
-    54.5), main = "fRMA only")
-```
-
-![plot of chunk frmaonly](figure/frmaonly.png) 
 
 
-When you look at the boxplots, it becomes clear that there is a more highly-variable portion of data. This perfectly corresponds with data that were procured from FFPE samples, rather than frozen samples (cutoffs for these samples are indicated with the white vertical lines). So correcting for this is a great idea, this is a natural selection for batch.
-
-The ComBat function is great for correcting for batch with a known batch variable like this one.
 
 
-```r
-mod <- matrix(nrow = length(as.factor(info.chung$HPV.Stat)), ncol = 1, as.factor(info.chung$HPV.Stat))
-combat.frma.chung <- sva::ComBat(frma.chung, info.chung$Procurement, mod)
-
-# store results
-ProjectTemplate::cache("combat.frma.chung")
-```
 
 
-Now that we've created the Combat-corrected dataset, we can examine the boxplots to see if they have improved.
 
 
-```r
-manyboxplot(combat.frma.chung, dotcol = cols[1], linecol = cols[2:4], vlines = c(34.5, 
-    54.5), main = "ComBat")
-```
-
-![plot of chunk combatonly](figure/combatonly.png) 
 
 
-We can compare this to what would happen just using SVA.
-
-
-```r
-mod <- model.matrix(~as.factor(info.chung$HPV.Stat))
-sv <- sva(frma.chung, mod)
-modSv <- cbind(mod, sv$sv)
-nmod <- dim(mod)[2]
-gammahat <- (frma.chung %*% modSv %*% solve(t(modSv) %*% modSv))[, (nmod + 1):(nmod + 
-    sv$n.sv)]
-
-# remove batch effects from data
-sva.frma.chung <- frma.chung - gammahat %*% t(sv$sv)
-
-# store results
-ProjectTemplate::cache("sva.frma.chung")
-```
-
-
-Here are the SVA plots
-
-
-```r
-manyboxplot(sva.frma.chung, dotcol = cols[1], linecol = cols[2:4], vlines = c(34.5, 
-    54.5), main = "SVA")
-```
-
-![plot of chunk svaonly](figure/svaonly.png) 
-
-
-Finally here they are in conjunction
-
-
-```r
-# SVA correction after ComBat(HPV outcome) #
-mod <- model.matrix(~as.factor(info.chung$HPV.Stat))
-sv <- sva(combat.frma.chung, mod)
-modSv <- cbind(mod, sv$sv)
-nmod <- dim(mod)[2]
-gammahat <- (combat.frma.chung %*% modSv %*% solve(t(modSv) %*% modSv))[, (nmod + 
-    1):(nmod + sv$n.sv)]
-sva.combat.frma.chung <- combat.frma.chung - gammahat %*% t(sv$sv)
-ProjectTemplate::cache("sva.combat.frma.chung")
-```
-
-
-Here are the SVA-Combat plots
-
-
-```r
-manyboxplot(sva.combat.frma.chung, dotcol = cols[1], linecol = cols[2:4], vlines = c(34.5, 
-    54.5), main = "SVA + ComBat")
-```
-
-![plot of chunk svacombat](figure/svacombat.png) 
 

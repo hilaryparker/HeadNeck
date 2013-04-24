@@ -176,4 +176,8 @@ Above we gave motivation for why batch correction helped normalize the expressio
 
 
 
-Now, in our case we had six samples that had no information as to their HPV statuses. Below is a 
+Now, in our case we had six samples that had no information as to their HPV statuses. Below is a table showing the predictions.
+
+```{r predictions}
+print(xtable(predictions), type='html')
+```
