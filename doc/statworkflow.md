@@ -217,18 +217,16 @@ Now, in our case we had six samples that had no information as to their HPV stat
 print(xtable(predictions), type = "html")
 ```
 
-```
-## <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-## <!-- Wed Apr 24 14:17:46 2013 -->
-## <TABLE border=1>
-## <TR> <TH>  </TH> <TH> ComBat </TH> <TH> SVA </TH> <TH> SVA and ComBat </TH>  </TR>
-##   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
-##   <TR> <TD align="right"> 2004-04-23-CHC55-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
-##   <TR> <TD align="right"> 2005-10-26-345CC10-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
-##   <TR> <TD align="right"> 2006-01-30-345CC11-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
-##   <TR> <TD align="right"> 2006-01-30-345CC12-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
-##   <TR> <TD align="right"> 2006-07-11-39CC07-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Pos </TD> <TD> Pos </TD> </TR>
-##   <TR> <TD align="right"> 323CC164-20070829-Hu133.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
-##    </TABLE>
-```
+<!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
+<!-- Wed Apr 24 14:32:23 2013 -->
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> ComBat </TH> <TH> SVA </TH> <TH> SVA and ComBat </TH>  </TR>
+  <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
+  <TR> <TD align="right"> 2004-04-23-CHC55-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
+  <TR> <TD align="right"> 2005-10-26-345CC10-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
+  <TR> <TD align="right"> 2006-01-30-345CC11-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
+  <TR> <TD align="right"> 2006-01-30-345CC12-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
+  <TR> <TD align="right"> 2006-07-11-39CC07-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Pos </TD> <TD> Pos </TD> </TR>
+  <TR> <TD align="right"> 323CC164-20070829-Hu133.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
+   </TABLE>
 
