@@ -115,10 +115,103 @@ t.test(frmadat.combat.sva[temp[2],out=="Pos"],frmadat.combat.sva[temp[2],out=="N
 frmadat[temp[2],out=="Pos"]
 pdf(file="temp.pdf",width=21)
 par(mfrow=c(1,3))
-boxplot(list(frmadat[temp[2],out=="Pos"],frmadat[temp[2],out=="Neg"]))
+
+
+setwd("C:/Users/Hilary/GitHub/HeadNeck/graphs")
+
+# boxplots for database
+png(file="p16nocorrection.png")
+boxplot(list(HPVPos=frma.chung[temp[2],out=="Pos"],HPVNeg=frma.chung[temp[2],out=="Neg"]), main="p16 Expression, No Correction")
+dev.off()
+
+png(file="p16svacombat.png")
+boxplot(list(HPVPos=sva.combat.frma.chung[temp[2],out=="Pos"],HPVNeg=sva.combat.frma.chung[temp[2],out=="Neg"]), main="p16 Expression, Batch Correction")
+dev.off()
+
+# plots for new samples
+
+# no correction predictions #
+y1<-frma.chung.naHPV[temp[2], pred.none=="Pos"]
+y2<-frma.chung.naHPV[temp[2], pred.none=="Neg"]
+x1<-rep(0,length(y1))
+x2<-rep(1,length(y2))
+y<-c(y1,y2)
+x<-c(x1,x2)
+plot(x,y,pch=16)
+
+png(file="p16nocorrection_newsamps.png")
+boxplot(list(HPVPos=frma.chung.naHPV[temp[2], pred.none=="Pos"],HPVNeg=frma.chung.naHPV[temp[2], pred.none=="Neg"]),main="p16 Expression in new samples, No Correction")
+dev.off()
+
+# sva correction predictions #
+y1<-frma.chung.naHPV[temp[2], pred.sva=="Pos"]
+y2<-frma.chung.naHPV[temp[2], pred.sva=="Neg"]
+x1<-rep(0,length(y1))
+x2<-rep(1,length(y2))
+y<-c(y1,y2)
+x<-c(x1,x2)
+plot(x,y,pch=16)
+
+# sva+fsva correction predictions #
+y1<-frma.chung.naHPV[temp[2], pred.sva.fsva=="Pos"]
+y2<-frma.chung.naHPV[temp[2], pred.sva.fsva=="Neg"]
+x1<-rep(0,length(y1))
+x2<-rep(1,length(y2))
+y<-c(y1,y2)
+x<-c(x1,x2)
+plot(x,y,pch=16)
+
+# combat correction predictions
+y1<-frma.chung.naHPV[temp[2], pred.combat=="Pos"]
+y2<-frma.chung.naHPV[temp[2], pred.combat=="Neg"]
+x1<-rep(0,length(y1))
+x2<-rep(1,length(y2))
+y<-c(y1,y2)
+x<-c(x1,x2)
+plot(x,y,pch=16)
+
+# combat + fsva predictions
+y1<-frma.chung.naHPV[temp[2], pred.combat.fsva=="Pos"]
+y2<-frma.chung.naHPV[temp[2], pred.combat.fsva=="Neg"]
+x1<-rep(0,length(y1))
+x2<-rep(1,length(y2))
+y<-c(y1,y2)
+x<-c(x1,x2)
+plot(x,y,pch=16)
+
+
+# combat + sva predictions
+y1<-frma.chung.naHPV[temp[2], pred.sva.combat=="Pos"]
+y2<-frma.chung.naHPV[temp[2], pred.sva.combat=="Neg"]
+x1<-rep(0,length(y1))
+x2<-rep(1,length(y2))
+y<-c(y1,y2)
+x<-c(x1,x2)
+plot(x,y,pch=16)
+
+
+# combat + sva + fsva predictions
+y1<-frma.chung.naHPV[temp[2], pred.sva.combat.fsva=="Pos"]
+y2<-frma.chung.naHPV[temp[2], pred.sva.combat.fsva=="Neg"]
+x1<-rep(0,length(y1))
+x2<-rep(1,length(y2))
+y<-c(y1,y2)
+x<-c(x1,x2)
+
+png(file="p16corrected_newsamps.png")
+plot(x,y,pch=16,main="p16 Expression in new samples, Batch Correction",xlim=c(-1,2))
+dev.off()
+
+png(file="p16svacombatfsva_newsampes.png")
+boxplot(list(frma.chung.naHPV[temp[2], pred.sva.fsva=="Pos"],frma.chung.naHPV[temp[2], pred.sva.fsva=="Neg"]))
+boxplot(list(frma.chung.naHPV[temp[2], pred.sva.combat.fsva=="Pos"],frma.chung.naHPV[temp[2], pred.sva.combat.fsva=="Neg"]))
+boxplot(list(frma.chung.naHPV[temp[2], pred.sva.combat.fsva=="Pos"],frma.chung.naHPV[temp[2], pred.sva.combat.fsva=="Neg"]))
 boxplot(list(frmadat.combat[temp[2],out=="Pos"],frmadat.combat[temp[2],out=="Neg"]))
 boxplot(list(frmadat.combat.sva[temp[2],out=="Pos"],frmadat.combat.sva[temp[2],out=="Neg"]))
-dev.off()
+
+
+
+
 
 ## boxplots of standard deviations - see what's going down in variance
 ## try to do a boxplot function if possible
