@@ -4,11 +4,20 @@ load.project()
 
 y<-list(predictor_results$none.out,predictor_results$exact.out,predictor_results$fast.out)
 
-y1<-predictor_results$exact.out-predictor_results$none.out
+round(mean(predictor_results$none.out),2)
+round(mean(predictor_results$dbonly.out),2)
+round(mean(predictor_results$dbfsva.out),2)
+
+y1<-predictor_results$dbonly.out-predictor_results$none.out
 t.test(y1)
 boxplot(y1)
 
-y2<-predictor_results$fast.out-predictor_results$none.out
+y2<-predictor_results$dbfsva.out-predictor_results$none.out
+t.test(y2)
+boxplot(y2)
+
+
+y3<-predictor_results$dbfsva.out-predictor_results$dbonly.out
 t.test(y2)
 boxplot(y2)
 
