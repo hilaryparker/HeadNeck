@@ -54,3 +54,23 @@ ProjectTemplate::cache("predictions_fSVA")
 # in markdown document, write 
 # print(xtable(predictions), type='html')
 
+
+
+## look at boxplots after fSVA correction, before fSVA correction
+setwd("C:/Users/Hilary/GitHub/HeadNeck/graphs")
+
+png(file="uncorrectednewsamps1.png")
+manyboxplot(cbind(frma.chung,frma.chung.naHPV),dotcol=cols[1],linecol=cols[2:4],vlines=86.5,main="Uncorrected database, uncorrected samples")
+dev.off()
+
+
+png(file="uncorrectednewsamps2.png")
+manyboxplot(cbind(sva.frma.chung,frma.chung.naHPV),dotcol=cols[1],linecol=cols[2:4],vlines=86.5,main="SVA corrected database, uncorrected samples")
+dev.off()
+
+manyboxplot(cbind(sva.frma.chung,fsva.sva.frma$new),dotcol=cols[1],linecol=cols[2:4],vlines=86.5,main="SVA corrected database, fSVA corrected samples")
+
+
+png(file="correctednewsamps.png")
+manyboxplot(cbind(sva.combat.frma.chung,fsva.sva.combat.frma$new),dotcol=cols[1],linecol=cols[2:4],vlines=86.5,main="SVA + ComBat corrected database, fSVA corrected samples")
+dev.off()
