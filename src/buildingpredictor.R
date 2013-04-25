@@ -16,13 +16,13 @@ n <- dim(dat)[2]
 set.seed(12345)
 
 # number of iterations, i.e. number of times I'll create training and testing sets.
-n.it<-2
+n.it<-100
 
 # number of samples in training and testing sets (half of total sample size)
 simsize<-43
 
 # creating vectors for storing accuracy results
-fast.out<-rep(0,n.it)
+none.out<-rep(0,n.it)
 dbonly.out<-rep(0,n.it)
 dbfsva.out<-rep(0,n.it)
 
