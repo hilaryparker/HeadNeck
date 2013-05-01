@@ -3,7 +3,7 @@
 The first step toward making a reproducible analysis is to organize the project code in a sensible way that will be easy for others to follow. Additionally, it is important to create code that can be run in batches or during non-interactive R sessions. I am going to present code organized using the R package `ProjectTemplate`. It allows for easy organization, loading and running of code.
 
 The project architecture I use is diagrammed here. I will refer to starting points A, B and C.
-![architecture](workflow.jpg)
+![architecture](organization_workflow.png)
 
 In order to best organize code for a reproducible project, you must understand the purpose that a specific code chunk has in the broader project. Some pieces of code are for cleaning and preprocessing the data, some are for doing the statistical analysis, and some are for creating graphics. Code for different purposes will be stored in different directories.
 
@@ -207,7 +207,7 @@ Being able to predict an outcome of interest in a new sample is a major reason w
 
 One of the first and most important steps that you should perform when doing a prediction problem is to cross-validate the accuracy of the predictor you want to use, in conjunction with the normalization and batch-correction techniques you will use. In this case, I am interested in predicting the HPV status of some unlabeled samples using prediction analysis of microarrays (PAM). In order to make sure the predictor is valid, and furthermore in order to assess whether or not the batch-correction techniques are improving the predictor, I will perform cross-validation in three different scenarios.
 
-![simulation](simulation.png)
+![crossvalidation](cross_validation.png)
 
 
 
@@ -226,7 +226,7 @@ print(xtable(predictions_fSVA), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Wed May 01 13:16:32 2013 -->
+<!-- Wed May 01 13:36:02 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+fSVA </TH> <TH> SVA+fSVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
