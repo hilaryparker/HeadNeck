@@ -203,6 +203,8 @@ manyboxplot(sva.combat.frma.chung, dotcol = cols[1], linecol = cols[2:4], vlines
 
 
 ## Prediction
+Above we gave motivation for why batch correction helped normalize the expression levels in different arrays. Now we'd like to convince you that this batch correction will help in prediction problems.
+
 Being able to predict an outcome of interest in a new sample is a major reason why we research genetic diseases. In this case, the outcome we care about is the HPV status. There were six samples in this case that did not have a reported HPV status. Below I will walk through how to build a predictor in order to identify the HPV status for these six samples.
 
 One of the first and most important steps that you should perform when doing a prediction problem is to cross-validate the accuracy of the predictor you want to use, in conjunction with the normalization and batch-correction techniques you will use. In this case, I am interested in predicting the HPV status of some unlabeled samples using prediction analysis of microarrays (PAM). In order to make sure the predictor is valid, and furthermore in order to assess whether or not the batch-correction techniques are improving the predictor, I will perform cross-validation in three different scenarios.
@@ -220,11 +222,25 @@ Below are the steps for buildling and validating a PAM predictor using cross-val
 5. Calculate the percent accuracy of the predicted HPV statuses.
 6. Repeat steps 1-5 100 times.
 
-I chose to compare the performance of these predictors against two different null hypotheses. The first is the case that I do not use fSVA to correct the test set -- that is, the case where I remove step 3 from the process. The second is the case where I use neither fSVA nor batch correction on the training set -- that is, the case where I remove both steps 3 and step 1 from the process.
+I chose to compare the performance of these predictors against two different null hypotheses. The first is the case that I do not use fSVA to correct the test set -- that is, the case where I remove step 3 from the process. The second is the case where I use neither fSVA nor batch correction on the training set -- that is, the case where I remove both steps 3 and 1 from the process.
+
+In order to clarify the differences between the three steps that I performed, below are three figures showing the expression level boxplots for each of the conditions. These are the boxplots for just one iteration of the code (the first one). The code for this can be found in the `test` directory.
 
 
+Now, below are the boxplots for the null case where no batch correction has been performed:
+![null1](null1.png)
 
-Above we gave motivation for why batch correction helped normalize the expression levels in different arrays. Now we'd like to convince you that this batch correction will help in prediction problems.
+The null case where batch correction on the training set only has been performed.
+![null2](null2.png)
+
+And finally the test case where batch correction has been performed on both the training set and the test set.
+![test](test.png)
+
+Clearly the most unwanted variation in the data is removed when batch correcting both the training set and test set. 
+
+Note that in the last graph, the data does not look quite as smooth as it did when we simply performed SVA on the entire data set in the "Motivating Batch Correction" section of this paper. That is to be expected -- when batch correction is performed using a smaller database (in this case 43 samples versus 86 samples), the method will detect less of the variation in the data. However, batch-correcting over the largest number of samples possible (in this case the 43 training set samples) and then fSVA correcting the remaining samples (in this case the 43 test set samples) will remove the most variation and is likely the best approach.
+
+Now that we've visualized the data, we can look at the cross-validated prediction accuracies in order to asses how well each of the methods performs.
 
 
 
@@ -238,7 +254,7 @@ print(xtable(predictions_fSVA), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Wed May 01 13:52:33 2013 -->
+<!-- Wed May 01 15:36:05 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+fSVA </TH> <TH> SVA+fSVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
