@@ -46,8 +46,8 @@ for(s in 1:n.it){
 	db.sva<-sva(db.dat,mod)
 
 	fsva.res <- fsva(dbdat=db.dat, mod=mod, sv=db.sva, newdat=newsamp.dat, method="exact")	
-	fast.fsva.res <- fsva(dbdat=db.dat, mod=mod, sv=db.sva, newdat=newsamp.dat, 
-							 method="fast")
+	#fast.fsva.res <- fsva(dbdat=db.dat, mod=mod, sv=db.sva, newdat=newsamp.dat, 
+	#						 method="fast")
 
 	# uncorrected #
 
@@ -55,10 +55,10 @@ for(s in 1:n.it){
 				   test.dat=newsamp.dat, test.grp=newsamp.out)
 
 	dbonly.out[s] <- predictor_PAM(train.dat=fsva.res$db, train.grp=db.out,
-					test.dat=newsamp.dat, test.grp=newsamp.out)
+					 test.dat=newsamp.dat, test.grp=newsamp.out)
 
-	dbfsva.out[s] <- predictor_PAM(train.dat=fast.fsva.res$db, train.grp=db.out,
-				   test.dat=fast.fsva.res$new, test.grp=newsamp.out)
+	dbfsva.out[s] <- predictor_PAM(train.dat=fsva.res$db, train.grp=db.out,
+				     test.dat=fsva.res$new, test.grp=newsamp.out)
 }
 
 predictor_results<-list(none.out=none.out,dbonly.out=dbonly.out,dbfsva.out=dbfsva.out,
