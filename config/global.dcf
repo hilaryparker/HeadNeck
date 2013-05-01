@@ -3,6 +3,6 @@ cache_loading: on
 munging: off
 logging: off
 load_libraries: on
-libraries: affy, frma, sva, pamr, genefilter, hgu133plus2.db, limma, simpleaffy, GSA, geneplotter, hgu133plus2frmavecs, devtools, broman, RColorBrewer, markdown, xtable
+libraries: affy, frma, sva, pamr, genefilter, hgu133plus2.db, limma, simpleaffy, GSA, geneplotter, hgu133plus2frmavecs, devtools, broman, RColorBrewer, markdown, xtable, GenomicRanges
 as_factors: off
 data_tables: off
