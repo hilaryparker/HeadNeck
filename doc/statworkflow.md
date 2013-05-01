@@ -216,11 +216,11 @@ Below are the steps for buildling and validating a PAM predictor using cross-val
 1. Batch-correct training set using ComBat and SVA.
 2. Build PAM predictor on training set.
 3. fSVA correct test set using the training set as the database.
-4. Predict HPV status on fSVA-corrected test set using predictor from step 2.
+4. Predict HPV status on this test set using predictor from step 2.
 5. Calculate the percent accuracy of the predicted HPV statuses.
 6. Repeat steps 1-5 100 times.
 
-I chose to compare the performance of these predictors against two different null hypotheses. The first is the case that I do not use fSVA to correct the test set. The second is the case where I use neither fSVA nor batch correction on the training set. 
+I chose to compare the performance of these predictors against two different null hypotheses. The first is the case that I do not use fSVA to correct the test set -- that is, the case where I remove step 3 from the process. The second is the case where I use neither fSVA nor batch correction on the training set -- that is, the case where I remove both steps 3 and step 1 from the process.
 
 
 
@@ -238,7 +238,7 @@ print(xtable(predictions_fSVA), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Wed May 01 13:46:37 2013 -->
+<!-- Wed May 01 13:52:33 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+fSVA </TH> <TH> SVA+fSVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
