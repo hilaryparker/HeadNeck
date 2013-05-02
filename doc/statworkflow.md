@@ -214,15 +214,13 @@ First, based on my previous research, I know that the level of correlation betwe
 print(xtable(table(info.chung$Procurement, info.chung$HPV.Stat)), type = "html")
 ```
 
-```
-## <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-## <!-- Thu May 02 15:51:11 2013 -->
-## <TABLE border=1>
-## <TR> <TH>  </TH> <TH> Neg </TH> <TH> Pos </TH>  </TR>
-##   <TR> <TD align="right"> FFPE </TD> <TD align="right">  16 </TD> <TD align="right">   4 </TD> </TR>
-##   <TR> <TD align="right"> Frozen </TD> <TD align="right">  42 </TD> <TD align="right">  24 </TD> </TR>
-##    </TABLE>
-```
+<!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
+<!-- Thu May 02 15:52:58 2013 -->
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> Neg </TH> <TH> Pos </TH>  </TR>
+  <TR> <TD align="right"> FFPE </TD> <TD align="right">  16 </TD> <TD align="right">   4 </TD> </TR>
+  <TR> <TD align="right"> Frozen </TD> <TD align="right">  42 </TD> <TD align="right">  24 </TD> </TR>
+   </TABLE>
 
 
 One most important steps that you should perform when doing a prediction problem is to cross-validate the accuracy of the predictor you want to use, in conjunction with the normalization and batch-correction techniques you will use. In this case, I am interested in predicting the HPV status of some unlabeled samples using prediction analysis of microarrays (PAM). In order to make sure the predictor is valid, and furthermore in order to assess whether or not the batch-correction techniques are improving the predictor, I will perform cross-validation in three different scenarios.
@@ -267,7 +265,7 @@ print(xtable(predictor_results$tabmeans), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 15:51:11 2013 -->
+<!-- Thu May 02 15:52:58 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Average Prediction Accuracy </TH>  </TR>
   <TR> <TD align="right"> No Correction </TD> <TD align="right"> 0.78 </TD> </TR>
@@ -299,7 +297,7 @@ print(xtable(predictions_fSVA), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 15:51:11 2013 -->
+<!-- Thu May 02 15:52:59 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+fSVA </TH> <TH> SVA+fSVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>

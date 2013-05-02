@@ -13,5 +13,5 @@ pretty_boxplot<-function(y,cols,labs=c("No Correction","Training Set Only","Trai
 			main=main)
 		
 	axis(side=1, at = 1:length(labs), 
-		 labels=labs, lwd=2, cex.axis=1)
+		 labels=labs, lwd=2, cex.axis=1.1)
 }

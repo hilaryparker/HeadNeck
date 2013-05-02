@@ -175,7 +175,7 @@ Being able to predict an outcome of interest in a new sample is a major reason w
 
 First, based on my previous research, I know that the level of correlation between the batch and the outcome can determine how much batch negatively impacts the performance of the predictor. While much of the variation in the data is due to unknown batches, I did find before that the prodcurement method was one of the most visible batches. Therefor I will look at the correlation between the procurement method and the HPV outcome.
 
-```{r correlations}
+```{r correlations, results='asis'}
 print(xtable(table(info.chung$Procurement,info.chung$HPV.Stat)), type='html')
 ```
 
