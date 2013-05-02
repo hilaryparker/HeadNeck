@@ -188,7 +188,7 @@ Below are the steps for buildling and validating a PAM predictor using cross-val
 5. Calculate the percent accuracy of the predicted HPV statuses.
 6. Repeat steps 1-5 100 times.
 
-I chose to compare the performance of these predictors against two different null hypotheses. The first is the case that I do not use fSVA to correct the test set -- that is, the case where I remove step 3 from the process. The second is the case where I use neither fSVA nor batch correction on the training set -- that is, the case where I remove both steps 3 and 1 from the process.
+I chose to compare the performance of these predictors against two different null hypotheses. The first is the case that I do not use fSVA to correct the test set -- that is, the case where I remove step 3 from the process. The second is the case where I use neither fSVA nor batch correction on the training set -- that is, the case where I remove both steps 3 and 1 from the process. In order to make the most valid comparisons, for each iteration you should perform all three scenarios on the same training and testing sets. This way, you have "paired" data and can compare the results of each iteration directly.
 
 In order to clarify the differences between the three steps that I performed, below are three figures showing the expression level boxplots for each of the conditions. These are the boxplots for just one iteration of the code (the first one). The code for this can be found in the `test` directory.
 
@@ -208,9 +208,22 @@ Note that in the last graph, the data does not look quite as smooth as it did wh
 
 Now that we've visualized the data, we can look at the cross-validated prediction accuracies in order to asses how well each of the methods performs.
 
+Below is a table of the average cross-validated prediction accuracy in the three groups.
 
+```{r cvaccuracies, results='asis'}
+print(xtable(predictor_results$tabmeans), type='html')
+```
 
+Because I employed a paired design, and performed each of the different scenarios on the same trianing/test sets for each of the 100 iterations, I can find the percent improvement by using batch correction.
 
+```{r cvdifftabs, results='asis'}
+print(xtable(predictor_results$tabmeans), type='html')
+```
+
+```{r cvdifftabs, results='asis'}
+print(xtable(predictor_results$tabmeans), type='html')
+```
+ 
 
 Now, in our case we had six samples that had no information as to their HPV statuses. Below is a table showing the predictions.
 

@@ -242,6 +242,17 @@ Note that in the last graph, the data does not look quite as smooth as it did wh
 
 Now that we've visualized the data, we can look at the cross-validated prediction accuracies in order to asses how well each of the methods performs.
 
+Below is a table of the average cross-validated prediction accuracy in the three groups.
+
+
+```r
+print(xtable(predictor_results$tabmeans), type = "html")
+```
+
+```
+## Error: no applicable method for 'xtable' applied to an object of class
+## "NULL"
+```
 
 
 
@@ -254,7 +265,7 @@ print(xtable(predictions_fSVA), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Wed May 01 15:36:05 2013 -->
+<!-- Wed May 01 20:41:50 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+fSVA </TH> <TH> SVA+fSVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>

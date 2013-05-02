@@ -61,6 +61,13 @@ for(s in 1:n.it){
 				     test.dat=fsva.res$new, test.grp=newsamp.out)
 }
 
+res1<-round(mean(none.out),2)
+res2<-round(mean(dbonly.out),2)
+res3<-round(mean(dbfsva.out),2)
+tabmeans<-matrix(c(res1,res2,res3),nrow=3,ncol=1)
+colnames(tabmeans)<-"Average Prediction Accuracy"
+rownames(tabmeans)<-c("No Correction","Batch Correction on training set only","Batch Correction on training set and test set")
+
 predictor_results<-list(none.out=none.out,dbonly.out=dbonly.out,dbfsva.out=dbfsva.out,
-				  simsize=simsize,n.it=n.it)
+				  simsize=simsize,n.it=n.it,tabmeans=tabmeans)
 ProjectTemplate::cache("predictor_results")
