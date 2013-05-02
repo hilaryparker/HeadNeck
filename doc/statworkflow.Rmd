@@ -214,10 +214,11 @@ Below is a table of the average cross-validated prediction accuracy in the three
 print(xtable(predictor_results$tabmeans), type='html')
 ```
 
-Because I employed a paired design, and performed each of the different scenarios on the same trianing/test sets for each of the 100 iterations, I can find the percent improvement by using batch correction.
+and here are boxplots of these improvements.
 
-```{r cvdifftabs, results='asis'}
-print(xtable(predictor_results$tabmeans), type='html')
+```{r cvboxplots}
+cols <- brewer.pal(3, "Dark2")
+pretty_boxplot(list(predictor_results$none.out,predictor_results$dbonly.out,predictor_results$dbfsva.out))
 ```
  
 

@@ -250,7 +250,7 @@ print(xtable(predictor_results$tabmeans), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 14:59:48 2013 -->
+<!-- Thu May 02 15:23:16 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Average Prediction Accuracy </TH>  </TR>
   <TR> <TD align="right"> No Correction </TD> <TD align="right"> 0.78 </TD> </TR>
@@ -259,21 +259,18 @@ print(xtable(predictor_results$tabmeans), type = "html")
    </TABLE>
 
 
-Because I employed a paired design, and performed each of the different scenarios on the same trianing/test sets for each of the 100 iterations, I can find the percent improvement by using batch correction.
+and here are boxplots of these improvements.
 
 
 ```r
-print(xtable(predictor_results$tabmeans), type = "html")
+cols <- brewer.pal(3, "Dark2")
+pretty_boxplot(list(predictor_results$none.out, predictor_results$dbonly.out, 
+    predictor_results$dbfsva.out))
 ```
 
-<!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 14:59:48 2013 -->
-<TABLE border=1>
-<TR> <TH>  </TH> <TH> Average Prediction Accuracy </TH>  </TR>
-  <TR> <TD align="right"> No Correction </TD> <TD align="right"> 0.78 </TD> </TR>
-  <TR> <TD align="right"> Batch Correction on training set only </TD> <TD align="right"> 0.79 </TD> </TR>
-  <TR> <TD align="right"> Batch Correction on training set and test set </TD> <TD align="right"> 0.80 </TD> </TR>
-   </TABLE>
+```
+## Error: argument "cols" is missing, with no default
+```
 
  
 
@@ -285,7 +282,7 @@ print(xtable(predictions_fSVA), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 14:59:48 2013 -->
+<!-- Thu May 02 15:23:17 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+fSVA </TH> <TH> SVA+fSVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
