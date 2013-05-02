@@ -100,29 +100,34 @@ sva.combat.frma.tab <- get.tab(sva.combat.frma.res,c2Sets)
 # for each of the combinations #
 
 # no correction
-names(frma.tab$reduced_geneset[which.min(frma.tab$gsTable$p.down.in.HPVPos)])
+r12<-names(frma.tab$reduced_geneset[which.min(frma.tab$gsTable$p.down.in.HPVPos)])
 #[1] "REACTOME_EXTRACELLULAR_MATRIX_ORGANIZATION"
-names(frma.tab$reduced_geneset[which.min(frma.tab$gsTable$p.up.in.HPVPos)])
+r11<-names(frma.tab$reduced_geneset[which.min(frma.tab$gsTable$p.up.in.HPVPos)])
 #[1] "PYEON_HPV_POSITIVE_TUMORS_UP"
 
 # combat correction
-names(combat.frma.tab$reduced_geneset[which.min(combat.frma.tab$gsTable$p.down.in.HPVPos)])
+r22<-names(combat.frma.tab$reduced_geneset[which.min(combat.frma.tab$gsTable$p.down.in.HPVPos)])
 #[1] "CROMER_TUMORIGENESIS_UP"
-names(combat.frma.tab$reduced_geneset[which.min(combat.frma.tab$gsTable$p.up.in.HPVPos)])
+r21<-names(combat.frma.tab$reduced_geneset[which.min(combat.frma.tab$gsTable$p.up.in.HPVPos)])
 #[1] "PYEON_HPV_POSITIVE_TUMORS_UP"
 
 # sva correction
-names(sva.frma.tab$reduced_geneset[which.min(sva.frma.tab$gsTable$p.down.in.HPVPos)])
+r32<-names(sva.frma.tab$reduced_geneset[which.min(sva.frma.tab$gsTable$p.down.in.HPVPos)])
 #[1] "LIANG_SILENCED_BY_METHYLATION_2"
-names(sva.frma.tab$reduced_geneset[which.min(sva.frma.tab$gsTable$p.up.in.HPVPos)])
+r31<-names(sva.frma.tab$reduced_geneset[which.min(sva.frma.tab$gsTable$p.up.in.HPVPos)])
 #[1] "SLEBOS_HEAD_AND_NECK_CANCER_WITH_HPV_UP"
 
 # combat + sva correction
-names(sva.combat.frma.tab$reduced_geneset[which.min(sva.combat.frma.tab$gsTable$p.down.in.HPVPos)])
+r42<-names(sva.combat.frma.tab$reduced_geneset[which.min(sva.combat.frma.tab$gsTable$p.down.in.HPVPos)])
 #[1] "BROWNE_INTERFERON_RESPONSIVE_GENES"
-names(sva.combat.frma.tab$reduced_geneset[which.min(sva.combat.frma.tab$gsTable$p.up.in.HPVPos)])
+r41<-names(sva.combat.frma.tab$reduced_geneset[which.min(sva.combat.frma.tab$gsTable$p.up.in.HPVPos)])
 #[1] "SLEBOS_HEAD_AND_NECK_CANCER_WITH_HPV_UP"
 
+c1<-c(r11,r21,r31,r41)
+c2<-c(r12,r22,r32,r42)
+tabgenesets<-cbind(c1,c2)
+colnames(tabgenesets)<-c("Up in HPV Positive","Down in HPV Positive")
+rownames(tabgenesets)<-c("No Correction","ComBat Only","SVA Only","ComBat and SVA")
 
 # barcode plots from gene sets identified above #
 
@@ -156,3 +161,4 @@ ProjectTemplate::cache("frma.tab")
 ProjectTemplate::cache("combat.frma.tab")
 ProjectTemplate::cache("sva.frma.tab")
 ProjectTemplate::cache("sva.combat.frma.tab")
+ProjectTemplate::cache("tabgenesets")

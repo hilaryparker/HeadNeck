@@ -201,6 +201,32 @@ manyboxplot(sva.combat.frma.chung, dotcol = cols[1], linecol = cols[2:4], vlines
 
 
 
+## Gene Set Enrichment Analysis and Specific Marker Evaluation
+Frequently in an analysis of a new dataset, you might have previous knowledge about the condition you are studying. In this case, there has been previous research on head and neck cancer, as well as the role that HPV has on the gene expression of these cancers. Indeed, the fact that head and neck cancer is so heterogeneous is why we chose to study it further. I will perform a general gene set enrichment analysis, as well as look at one specific gene that is known to be highly correlated with HPV in head and neck cancer. By doing this analysis, I can verify that batch correction is helping with these expression analyses. Previous research suggests that it will, but it is always important to verify that the batch correction isn't introducing any errors into the analysis.
+
+The first analysis I will perform is gene set analysis -- that is, comparing the differential expression levels between HPV positive and negative samples in my data, and compare these to expression levels of previous studies. The code for this analysis can be found in the `src` directory. I downloaded the reference gene sets from the Broad Institute -- code preprocessing this can be found in the `munge` folder. 
+
+The general idea of gene set enrichment analysis is to compare the differential expression in your data between two different groups, and compare that differential expression to known gene sets that are correlation with different biological phenomena. The analysis will identify how closely the differential expression in your datasets correspond to the differential expression of other known comparison groups.
+
+In this case I am interested in the differential expression between HPV positive and HPV negative samples. Below are the results for the gene sets that had the largest increase in differential expression for HPV positive samples compared to HPV negative samples, as well as the gene sets that had the largest decrease in diferential expression for HPV positive samples compared to HPV negative samples.
+
+
+```r
+print(xtable(tabgenesets), type = "html")
+```
+
+<!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
+<!-- Thu May 02 18:35:09 2013 -->
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> Up in HPV Positive </TH> <TH> Down in HPV Positive </TH>  </TR>
+  <TR> <TD align="right"> No Correction </TD> <TD> PYEON_HPV_POSITIVE_TUMORS_UP </TD> <TD> REACTOME_EXTRACELLULAR_MATRIX_ORGANIZATION </TD> </TR>
+  <TR> <TD align="right"> ComBat Only </TD> <TD> PYEON_HPV_POSITIVE_TUMORS_UP </TD> <TD> CROMER_TUMORIGENESIS_UP </TD> </TR>
+  <TR> <TD align="right"> SVA Only </TD> <TD> SLEBOS_HEAD_AND_NECK_CANCER_WITH_HPV_UP </TD> <TD> LIANG_SILENCED_BY_METHYLATION_2 </TD> </TR>
+  <TR> <TD align="right"> ComBat and SVA </TD> <TD> SLEBOS_HEAD_AND_NECK_CANCER_WITH_HPV_UP </TD> <TD> BROWNE_INTERFERON_RESPONSIVE_GENES </TD> </TR>
+   </TABLE>
+
+
+This analysis is reassuring. Both the uncorrected and corrected data correlate to previously studied head and neck cancer gene sets. Furthermore, the Pyeon dataset included head and neck cancer smaples, as well as cervical cancer samples. The Slebos dataset includes only head and neck cancer samples. Therefore, we have some indication that batch correction is helping (and is also not harming) the analysis. The genes that are most down-expressed in HPV positive samples compared to HPV negative samples may be related to the cancer, and would warrent further analysis.
 
 ## Prediction
 Above we gave motivation for why batch correction helped normalize the expression levels in different arrays. Now we'd like to convince you that this batch correction will help in prediction problems.
@@ -215,7 +241,7 @@ print(xtable(table(info.chung$Procurement, info.chung$HPV.Stat)), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 16:46:30 2013 -->
+<!-- Thu May 02 18:35:09 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Neg </TH> <TH> Pos </TH>  </TR>
   <TR> <TD align="right"> FFPE </TD> <TD align="right">  16 </TD> <TD align="right">   4 </TD> </TR>
@@ -269,7 +295,7 @@ print(xtable(predictor_results$tabmeans), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 16:46:30 2013 -->
+<!-- Thu May 02 18:35:09 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Average Prediction Accuracy </TH>  </TR>
   <TR> <TD align="right"> No Correction </TD> <TD align="right"> 0.78 </TD> </TR>
@@ -312,7 +338,7 @@ print(xtable(res), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 16:46:30 2013 -->
+<!-- Thu May 02 18:35:09 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+SVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
@@ -323,4 +349,5 @@ print(xtable(res), type = "html")
   <TR> <TD align="right"> 2006-07-11-39CC07-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Pos </TD> <TD> Pos </TD> </TR>
   <TR> <TD align="right"> 323CC164-20070829-Hu133.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
    </TABLE>
+
 

@@ -167,6 +167,20 @@ manyboxplot(sva.combat.frma.chung,dotcol=cols[1],linecol=cols[2:4],vlines=c(34.5
 
 
 
+## Gene Set Enrichment Analysis and Specific Marker Evaluation
+Frequently in an analysis of a new dataset, you might have previous knowledge about the condition you are studying. In this case, there has been previous research on head and neck cancer, as well as the role that HPV has on the gene expression of these cancers. Indeed, the fact that head and neck cancer is so heterogeneous is why we chose to study it further. I will perform a general gene set enrichment analysis, as well as look at one specific gene that is known to be highly correlated with HPV in head and neck cancer. By doing this analysis, I can verify that batch correction is helping with these expression analyses. Previous research suggests that it will, but it is always important to verify that the batch correction isn't introducing any errors into the analysis.
+
+The first analysis I will perform is gene set analysis -- that is, comparing the differential expression levels between HPV positive and negative samples in my data, and compare these to expression levels of previous studies. The code for this analysis can be found in the `src` directory. I downloaded the reference gene sets from the Broad Institute -- code preprocessing this can be found in the `munge` folder. 
+
+The general idea of gene set enrichment analysis is to compare the differential expression in your data between two different groups, and compare that differential expression to known gene sets that are correlation with different biological phenomena. The analysis will identify how closely the differential expression in your datasets correspond to the differential expression of other known comparison groups.
+
+In this case I am interested in the differential expression between HPV positive and HPV negative samples. Below are the results for the gene sets that had the largest increase in differential expression for HPV positive samples compared to HPV negative samples, as well as the gene sets that had the largest decrease in diferential expression for HPV positive samples compared to HPV negative samples.
+
+```{r gsa, results='asis'}
+print(xtable(tabgenesets), type='html')
+```
+
+This analysis is reassuring. Both the uncorrected and corrected data correlate to previously studied head and neck cancer gene sets. Furthermore, the Pyeon dataset included head and neck cancer smaples, as well as cervical cancer samples. The Slebos dataset includes only head and neck cancer samples. Therefore, we have some indication that batch correction is helping (and is also not harming) the analysis. The genes that are most down-expressed in HPV positive samples compared to HPV negative samples may be related to the cancer, and would warrent further analysis.
 
 ## Prediction
 Above we gave motivation for why batch correction helped normalize the expression levels in different arrays. Now we'd like to convince you that this batch correction will help in prediction problems.
@@ -248,3 +262,4 @@ colnames(res)<-c(colnames(predictions_nofSVA)[c(1,4)],
 				 colnames(predictions_fSVA)[4])
 print(xtable(res), type='html')
 ```
+
