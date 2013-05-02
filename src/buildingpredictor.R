@@ -4,7 +4,7 @@ library("ProjectTemplate")
 load.project()
 
 ## put things into easier names
-dat <- combat.frma.chung
+dat <- frma.chung
 out <- as.factor(info.chung$HPV.Stat)
 
 # total number of samples
@@ -40,17 +40,18 @@ for(s in 1:n.it){
 	db.out<-out[ind==0]
 	newsamp.dat<-dat[,ind==1]
 	newsamp.out<-out[ind==1]
+	
+	# combat on database first
+	mod <- matrix(nrow=simsize,ncol=1,db.out)
+	db.dat <- sva::ComBat(db.dat,info.chung$Procurement[ind==0],mod)
 
 	# run sva on the database (will be used later in fsva) #
 	mod<-model.matrix(~as.factor(db.out))
 	db.sva<-sva(db.dat,mod)
 
 	fsva.res <- fsva(dbdat=db.dat, mod=mod, sv=db.sva, newdat=newsamp.dat, method="exact")	
-	#fast.fsva.res <- fsva(dbdat=db.dat, mod=mod, sv=db.sva, newdat=newsamp.dat, 
-	#						 method="fast")
 
-	# uncorrected #
-
+	# results #
 	none.out[s] <- predictor_PAM(train.dat=db.dat, train.grp=db.out,
 				   test.dat=newsamp.dat, test.grp=newsamp.out)
 
