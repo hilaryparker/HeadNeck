@@ -222,7 +222,7 @@ Below are the steps for buildling and validating a PAM predictor using cross-val
 5. Calculate the percent accuracy of the predicted HPV statuses.
 6. Repeat steps 1-5 100 times.
 
-I chose to compare the performance of these predictors against two different null hypotheses. The first is the case that I do not use fSVA to correct the test set -- that is, the case where I remove step 3 from the process. The second is the case where I use neither fSVA nor batch correction on the training set -- that is, the case where I remove both steps 3 and 1 from the process.
+I chose to compare the performance of these predictors against two different null hypotheses. The first is the case that I do not use fSVA to correct the test set -- that is, the case where I remove step 3 from the process. The second is the case where I use neither fSVA nor batch correction on the training set -- that is, the case where I remove both steps 3 and 1 from the process. In order to make the most valid comparisons, for each iteration you should perform all three scenarios on the same training and testing sets. This way, you have "paired" data and can compare the results of each iteration directly.
 
 In order to clarify the differences between the three steps that I performed, below are three figures showing the expression level boxplots for each of the conditions. These are the boxplots for just one iteration of the code (the first one). The code for this can be found in the `test` directory.
 
@@ -249,13 +249,33 @@ Below is a table of the average cross-validated prediction accuracy in the three
 print(xtable(predictor_results$tabmeans), type = "html")
 ```
 
+<!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
+<!-- Thu May 02 14:59:48 2013 -->
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> Average Prediction Accuracy </TH>  </TR>
+  <TR> <TD align="right"> No Correction </TD> <TD align="right"> 0.78 </TD> </TR>
+  <TR> <TD align="right"> Batch Correction on training set only </TD> <TD align="right"> 0.79 </TD> </TR>
+  <TR> <TD align="right"> Batch Correction on training set and test set </TD> <TD align="right"> 0.80 </TD> </TR>
+   </TABLE>
+
+
+Because I employed a paired design, and performed each of the different scenarios on the same trianing/test sets for each of the 100 iterations, I can find the percent improvement by using batch correction.
+
+
+```r
+print(xtable(predictor_results$tabmeans), type = "html")
 ```
-## Error: no applicable method for 'xtable' applied to an object of class
-## "NULL"
-```
 
+<!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
+<!-- Thu May 02 14:59:48 2013 -->
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> Average Prediction Accuracy </TH>  </TR>
+  <TR> <TD align="right"> No Correction </TD> <TD align="right"> 0.78 </TD> </TR>
+  <TR> <TD align="right"> Batch Correction on training set only </TD> <TD align="right"> 0.79 </TD> </TR>
+  <TR> <TD align="right"> Batch Correction on training set and test set </TD> <TD align="right"> 0.80 </TD> </TR>
+   </TABLE>
 
-
+ 
 
 Now, in our case we had six samples that had no information as to their HPV statuses. Below is a table showing the predictions.
 
@@ -265,7 +285,7 @@ print(xtable(predictions_fSVA), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Wed May 01 20:41:50 2013 -->
+<!-- Thu May 02 14:59:48 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+fSVA </TH> <TH> SVA+fSVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>

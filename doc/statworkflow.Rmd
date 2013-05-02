@@ -219,10 +219,6 @@ Because I employed a paired design, and performed each of the different scenario
 ```{r cvdifftabs, results='asis'}
 print(xtable(predictor_results$tabmeans), type='html')
 ```
-
-```{r cvdifftabs, results='asis'}
-print(xtable(predictor_results$tabmeans), type='html')
-```
  
 
 Now, in our case we had six samples that had no information as to their HPV statuses. Below is a table showing the predictions.
