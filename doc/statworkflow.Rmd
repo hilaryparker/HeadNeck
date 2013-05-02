@@ -173,7 +173,13 @@ Above we gave motivation for why batch correction helped normalize the expressio
 
 Being able to predict an outcome of interest in a new sample is a major reason why we research genetic diseases. In this case, the outcome we care about is the HPV status. There were six samples in this case that did not have a reported HPV status. Below I will walk through how to build a predictor in order to identify the HPV status for these six samples.
 
-One of the first and most important steps that you should perform when doing a prediction problem is to cross-validate the accuracy of the predictor you want to use, in conjunction with the normalization and batch-correction techniques you will use. In this case, I am interested in predicting the HPV status of some unlabeled samples using prediction analysis of microarrays (PAM). In order to make sure the predictor is valid, and furthermore in order to assess whether or not the batch-correction techniques are improving the predictor, I will perform cross-validation in three different scenarios.
+First, based on my previous research, I know that the level of correlation between the batch and the outcome can determine how much batch negatively impacts the performance of the predictor. While much of the variation in the data is due to unknown batches, I did find before that the prodcurement method was one of the most visible batches. Therefor I will look at the correlation between the procurement method and the HPV outcome.
+
+```{r correlations}
+print(xtable(table(info.chung$Procurement,info.chung$HPV.Stat)), type='html')
+```
+
+One most important steps that you should perform when doing a prediction problem is to cross-validate the accuracy of the predictor you want to use, in conjunction with the normalization and batch-correction techniques you will use. In this case, I am interested in predicting the HPV status of some unlabeled samples using prediction analysis of microarrays (PAM). In order to make sure the predictor is valid, and furthermore in order to assess whether or not the batch-correction techniques are improving the predictor, I will perform cross-validation in three different scenarios.
 
 ![crossvalidation](cross_validation.png)
 
@@ -192,14 +198,13 @@ I chose to compare the performance of these predictors against two different nul
 
 In order to clarify the differences between the three steps that I performed, below are three figures showing the expression level boxplots for each of the conditions. These are the boxplots for just one iteration of the code (the first one). The code for this can be found in the `test` directory.
 
-
-Now, below are the boxplots for the null case where no batch correction has been performed:
+Below are the boxplots for the null case where no batch correction has been performed on the training and test sets:
 ![null1](null1.png)
 
-The null case where batch correction on the training set only has been performed.
+Now, here is the null case where batch correction on the training set only has been performed.
 ![null2](null2.png)
 
-And finally the test case where batch correction has been performed on both the training set and the test set.
+And finally here is the test case where batch correction has been performed on both the training set and the test set.
 ![test](test.png)
 
 Clearly the most unwanted variation in the data is removed when batch correcting both the training set and test set. 
