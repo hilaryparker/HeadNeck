@@ -218,9 +218,10 @@ and here are boxplots of these improvements.
 
 ```{r cvboxplots}
 cols <- brewer.pal(3, "Dark2")
-pretty_boxplot(list(predictor_results$none.out,predictor_results$dbonly.out,predictor_results$dbfsva.out))
+pretty_boxplot(y=list(predictor_results$none.out,predictor_results$dbonly.out,predictor_results$dbfsva.out),cols=cols,labs=c("No Correction","Training Set Only","Training and Test Set"))
 ```
- 
+
+These results are consistent with what was previously found in Parker and Leek 2012. Because the level of confounding between the batches and the outcomes was relatively low, we did not expect to see a huge amount of improvement. However, we did expect to see a decrease in the variance of the cross-validated accuracies.
 
 Now, in our case we had six samples that had no information as to their HPV statuses. Below is a table showing the predictions.
 
