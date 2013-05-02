@@ -250,7 +250,7 @@ print(xtable(predictor_results$tabmeans), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 15:28:49 2013 -->
+<!-- Thu May 02 15:32:03 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Average Prediction Accuracy </TH>  </TR>
   <TR> <TD align="right"> No Correction </TD> <TD align="right"> 0.78 </TD> </TR>
@@ -266,7 +266,7 @@ and here are boxplots of these improvements.
 cols <- brewer.pal(3, "Dark2")
 pretty_boxplot(y = list(predictor_results$none.out, predictor_results$dbonly.out, 
     predictor_results$dbfsva.out), cols = cols, labs = c("No Correction", "Training Set Only", 
-    "Training and Test Set"))
+    "Training and Test Set"), main = "Cross-Validated Accuracies")
 ```
 
 ![plot of chunk cvboxplots](figure/cvboxplots.png) 
@@ -282,7 +282,7 @@ print(xtable(predictions_fSVA), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 15:28:49 2013 -->
+<!-- Thu May 02 15:32:03 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+fSVA </TH> <TH> SVA+fSVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
