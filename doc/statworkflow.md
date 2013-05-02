@@ -205,7 +205,7 @@ manyboxplot(sva.combat.frma.chung, dotcol = cols[1], linecol = cols[2:4], vlines
 ## Prediction
 Above we gave motivation for why batch correction helped normalize the expression levels in different arrays. Now we'd like to convince you that this batch correction will help in prediction problems.
 
-Being able to predict an outcome of interest in a new sample is a major reason why we research genetic diseases. In this case, the outcome we care about is the HPV status. There were six samples in this case that did not have a reported HPV status. Below I will walk through how to build a predictor in order to identify the HPV status for these six samples.
+Being able to predict an outcome of interest in a new sample is a major reason why we research genetic diseases. In this case, the outcome we care about is the HPV status. There were seven samples in this case that did not have a reported HPV status. Below I will walk through how to build a predictor in order to identify the HPV status for these seven samples.
 
 First, based on my previous research, I know that the level of correlation between the batch and the outcome can determine how much batch negatively impacts the performance of the predictor. While much of the variation in the data is due to unknown batches, I did find before that the prodcurement method was one of the most visible batches. Therefor I will look at the correlation between the procurement method and the HPV outcome.
 
@@ -215,7 +215,7 @@ print(xtable(table(info.chung$Procurement, info.chung$HPV.Stat)), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 15:52:58 2013 -->
+<!-- Thu May 02 16:46:30 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Neg </TH> <TH> Pos </TH>  </TR>
   <TR> <TD align="right"> FFPE </TD> <TD align="right">  16 </TD> <TD align="right">   4 </TD> </TR>
@@ -223,7 +223,11 @@ print(xtable(table(info.chung$Procurement, info.chung$HPV.Stat)), type = "html")
    </TABLE>
 
 
-One most important steps that you should perform when doing a prediction problem is to cross-validate the accuracy of the predictor you want to use, in conjunction with the normalization and batch-correction techniques you will use. In this case, I am interested in predicting the HPV status of some unlabeled samples using prediction analysis of microarrays (PAM). In order to make sure the predictor is valid, and furthermore in order to assess whether or not the batch-correction techniques are improving the predictor, I will perform cross-validation in three different scenarios.
+Because this is a moderate, but not extreme, level of correlation between the procurement method and the outcome, I only will expect a modest improvement in prediction accuracy in the steps that follow. However given that the correlation is not zero, and furthermore given that there are several other known and unknown variables contributing to the variance in this data, I think batch correction is still appropriate.
+
+One most important steps that you should perform when doing a prediction problem is to cross-validate the accuracy of the predictor you want to use, in conjunction with the normalization and batch-correction techniques you will use. Looking at the distribution of the variances from before is helpful, but ultimately looking at the cross-validated accuracies gives you a more certain assessment of whether or not the batch-correction is indeed helping your data analysis. 
+
+In this case, I am interested in predicting the HPV status of some unlabeled samples using prediction analysis of microarrays (PAM). In order to make sure the predictor is valid, and furthermore in order to assess whether or not the batch-correction techniques are improving the predictor, I will perform cross-validation in three different scenarios.
 
 ![crossvalidation](cross_validation.png)
 
@@ -265,7 +269,7 @@ print(xtable(predictor_results$tabmeans), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 15:52:58 2013 -->
+<!-- Thu May 02 16:46:30 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Average Prediction Accuracy </TH>  </TR>
   <TR> <TD align="right"> No Correction </TD> <TD align="right"> 0.78 </TD> </TR>
@@ -274,7 +278,7 @@ print(xtable(predictor_results$tabmeans), type = "html")
    </TABLE>
 
 
-and here are boxplots of these improvements.
+Below are boxplots of these improvements.
 
 
 ```r
@@ -289,23 +293,34 @@ pretty_boxplot(y = list(predictor_results$none.out, predictor_results$dbonly.out
 
 These results are consistent with what was previously found in Parker and Leek 2012. Because the level of confounding between the batches and the outcomes was relatively low, we did not expect to see a huge amount of improvement. However, we did expect to see a decrease in the variance of the cross-validated accuracies.
 
-Now, in our case we had six samples that had no information as to their HPV statuses. Below is a table showing the predictions.
+Based on these results, I feel confident in applying batch correction on both the database (using ComBat and SVA) as well as on the new samples (using fSVA). I have every reason to believe that batch correction will lead to the most accurate predictions.
+
+Recall from before that I had seven unlabeled samples that I am interesting in classifying as HPV positive or HPV negative. In order to illustrate my point, I will predict the status of these seven samples after batch correction, and also before batch correction to see if there is a difference in the predicted outcomes.
+
+I now will use my entire dataset of labeled HPV samples (n=86) as my training set. After batch-correcting this dataset, I will build a PAM predictor on it. Then, I will fSVA-correct the seven unlabeled samples (using the 86 labeled samples as the database).
+
+I'll compare the results of this to the scenario where I don't batch correct the seven unlabeled samples, and where I don't batch correct either the seven unlabeled samples or the 86 samples in the dataset.
+
+Below are the results of this analysis.
 
 
 ```r
-print(xtable(predictions_fSVA), type = "html")
+res <- cbind(predictions_nofSVA[, 1], predictions_nofSVA[, 4], predictions_fSVA[, 
+    4])
+colnames(res) <- c(colnames(predictions_nofSVA)[c(1, 4)], colnames(predictions_fSVA)[4])
+print(xtable(res), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 15:52:59 2013 -->
+<!-- Thu May 02 16:46:30 2013 -->
 <TABLE border=1>
-<TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+fSVA </TH> <TH> SVA+fSVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
-  <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
-  <TR> <TD align="right"> 2004-04-23-CHC55-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
-  <TR> <TD align="right"> 2005-10-26-345CC10-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Pos </TD> </TR>
-  <TR> <TD align="right"> 2006-01-30-345CC11-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Pos </TD> <TD> Pos </TD> <TD> Pos </TD> </TR>
-  <TR> <TD align="right"> 2006-01-30-345CC12-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
-  <TR> <TD align="right"> 2006-07-11-39CC07-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Pos </TD> <TD> Pos </TD> <TD> Pos </TD> </TR>
-  <TR> <TD align="right"> 323CC164-20070829-Hu133.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
+<TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+SVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
+  <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
+  <TR> <TD align="right"> 2004-04-23-CHC55-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
+  <TR> <TD align="right"> 2005-10-26-345CC10-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Pos </TD> </TR>
+  <TR> <TD align="right"> 2006-01-30-345CC11-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Pos </TD> </TR>
+  <TR> <TD align="right"> 2006-01-30-345CC12-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
+  <TR> <TD align="right"> 2006-07-11-39CC07-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Pos </TD> <TD> Pos </TD> </TR>
+  <TR> <TD align="right"> 323CC164-20070829-Hu133.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
    </TABLE>
 
