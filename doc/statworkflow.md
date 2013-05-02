@@ -250,7 +250,7 @@ print(xtable(predictor_results$tabmeans), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 15:23:16 2013 -->
+<!-- Thu May 02 15:28:49 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Average Prediction Accuracy </TH>  </TR>
   <TR> <TD align="right"> No Correction </TD> <TD align="right"> 0.78 </TD> </TR>
@@ -264,15 +264,15 @@ and here are boxplots of these improvements.
 
 ```r
 cols <- brewer.pal(3, "Dark2")
-pretty_boxplot(list(predictor_results$none.out, predictor_results$dbonly.out, 
-    predictor_results$dbfsva.out))
+pretty_boxplot(y = list(predictor_results$none.out, predictor_results$dbonly.out, 
+    predictor_results$dbfsva.out), cols = cols, labs = c("No Correction", "Training Set Only", 
+    "Training and Test Set"))
 ```
 
-```
-## Error: argument "cols" is missing, with no default
-```
+![plot of chunk cvboxplots](figure/cvboxplots.png) 
 
- 
+
+These results are consistent with what was previously found in Parker and Leek 2012. Because the level of confounding between the batches and the outcomes was relatively low, we did not expect to see a huge amount of improvement. However, we did expect to see a decrease in the variance of the cross-validated accuracies.
 
 Now, in our case we had six samples that had no information as to their HPV statuses. Below is a table showing the predictions.
 
@@ -282,7 +282,7 @@ print(xtable(predictions_fSVA), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Thu May 02 15:23:17 2013 -->
+<!-- Thu May 02 15:28:49 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+fSVA </TH> <TH> SVA+fSVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
