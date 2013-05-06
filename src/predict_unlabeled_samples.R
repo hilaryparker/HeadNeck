@@ -55,6 +55,30 @@ ProjectTemplate::cache("predictions_fSVA")
 # print(xtable(predictions), type='html')
 
 
+# p16 levels in predicted samples
+yp1<-frma.chung.naHPV[temp[2], predictions_fSVA[,4]=="Pos"]
+yp2<-frma.chung.naHPV[temp[3], predictions_fSVA[,4]=="Pos"]
+yp3<-frma.chung.naHPV[temp[4], predictions_fSVA[,4]=="Pos"]
+
+yn1<-frma.chung.naHPV[temp[2], predictions_fSVA[,4]=="Neg"]
+yn2<-frma.chung.naHPV[temp[3], predictions_fSVA[,4]=="Neg"]
+yn3<-frma.chung.naHPV[temp[4], predictions_fSVA[,4]=="Neg"]
+
+x1<-rep(1,length(y1))
+x2<-rep(1,length(y2))
+cols <- brewer.pal(3, "Dark2")
+
+setwd("C:/Users/Hilary/GitHub/HeadNeck/doc")
+png(file="predictedp161.png")
+plot(x1,y1,col=cols[2],pch=19,ylim=c(3.5,8),xaxt='n',xlab="Samples with no HPV label",ylab="Expression Level",main="p16 Expression Levels in unlabeled samples")
+points(x2,y2,pch=19,col=cols[3])
+legend("bottomright",c("Predicted HPV Positive","Predicted HPV Negative"),col=cols[2:3],pch=19)
+dev.off()
+
+
+
+
+
 
 ## look at boxplots after fSVA correction, before fSVA correction
 setwd("C:/Users/Hilary/GitHub/HeadNeck/graphs")

@@ -224,7 +224,7 @@ print(xtable(tabgenesets), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Mon May 06 17:05:28 2013 -->
+<!-- Mon May 06 18:12:30 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Up in HPV Positive </TH> <TH> Down in HPV Positive </TH>  </TR>
   <TR> <TD align="right"> No Correction </TD> <TD> PYEON_HPV_POSITIVE_TUMORS_UP </TD> <TD> REACTOME_EXTRACELLULAR_MATRIX_ORGANIZATION </TD> </TR>
@@ -247,7 +247,7 @@ print(xtable(ttable), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Mon May 06 17:05:28 2013 -->
+<!-- Mon May 06 18:12:30 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Before Batch Correction </TH> <TH> After Batch Correction </TH>  </TR>
   <TR> <TD align="right"> 207039_at </TD> <TD align="right"> 7.78 </TD> <TD align="right"> 9.69 </TD> </TR>
@@ -271,7 +271,7 @@ print(xtable(table(info.chung$Procurement, info.chung$HPV.Stat)), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Mon May 06 17:05:28 2013 -->
+<!-- Mon May 06 18:12:30 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Neg </TH> <TH> Pos </TH>  </TR>
   <TR> <TD align="right"> FFPE </TD> <TD align="right">  16 </TD> <TD align="right">   4 </TD> </TR>
@@ -325,7 +325,7 @@ print(xtable(predictor_results$tabmeans), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Mon May 06 17:05:28 2013 -->
+<!-- Mon May 06 18:12:30 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Average Prediction Accuracy </TH>  </TR>
   <TR> <TD align="right"> No Correction </TD> <TD align="right"> 0.78 </TD> </TR>
@@ -368,7 +368,7 @@ print(xtable(res), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Mon May 06 17:05:28 2013 -->
+<!-- Mon May 06 18:12:30 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+SVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
@@ -381,5 +381,18 @@ print(xtable(res), type = "html")
    </TABLE>
 
 
+Within this analysis, there are a couple more pieces of evidence that can help validate this result. While nothing short of a biopsy of the tumors can prove that the predictions are correct, by looking at other biological markers we can determine whether or not the predictions are incorrect.
+
+First, from before recall that p16 is a marker for HPV positive or negative. Before batch correction, all of the samples are predicted as HPV negative. However, after batch correction on both the database and the new samples, three are predicted as HPV positive and four are predicted as HPV negative. Below are plots of the expression level of p16 for the HPV positive and negative samples.
+
+![p16](predictedp16.png)
+
+Notice that the positive samples have higher p16 expression than the negative samples, except for one negative sample. This is consistent with the fact that p16 is a marker for positive samples, but still occurs in 20% of negative samples. While this can't be taken as proof that the predictions are correct, it is evidence that is consistent with the predictions we have made.
+
+Another piece of evidence to examine is the subsite where the tumor occurred for each of the samples. Tumors that occur outside of the oral cavity are almost exclusively HPV negative, whereas tumors that occur inside the oral cavity are about 50% HPV positive in this dataset. Of the tumors in our sample, five occur in the oral cavity, one in the lung, and one in an unknown location. The three samples that are predicted as HPV positive after batch correction all occur in the oral cavity, leading to 3/5 of the new samples that originated in the oral cavity to be HPV positive. The lung sample and unknown sample remained HPV negative. Again, this is not proof that the prediction worked, but rather evidence that is consistent with the predictions being correct.
+
+In both of the validations I describe above, nothing was proved about our samples having the correct predictions after batch correction. However, when doing these tests, it could have strongly shown that our predictions were not correct (for example, if the lung tumor had been called HPV positive). Doing this test simply adds more evidence that the predictions we performed are in fact correct.
+
+
 ## Discussion
-In this paper we have provided a reproducible and reliable way to build a predictor while accounting for batch effects within the data.
+In this paper we have provided a reproducible and reliable way to build a predictor while accounting for batch effects within the data. Our hope is that the methods we describe in detail above can be used as a roadmap for future researchers who want to create predictors from genomic data, all while accounting for batch effects and employing good reproducible methods.

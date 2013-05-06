@@ -87,6 +87,11 @@ pretty_boxplot(y=list(frma.chung[temp[4],out=="Pos"],frma.chung[temp[4],out=="Ne
 
 
 
+
+
+########### end of curated code
+
+
 setwd("C:/Users/Hilary/GitHub/HeadNeck/graphs")
 
 # boxplots for database
