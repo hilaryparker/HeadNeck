@@ -49,23 +49,28 @@ temp[4]
 
 # checking the change in differential expression for before/after
 
+# set up table for paper
+ttable<-matrix(nrow=3,ncol=2)
+colnames(ttable)<-c("Before Batch Correction","After Batch Correction")
+rownames(ttable)<-names(yy[temp[2:4]])
+
 #temp[2]
-t.test(frma.chung[temp[2],out=="Pos"],frma.chung[temp[2],out=="Neg"])
-t.test(combat.frma.chung[temp[2],out=="Pos"],combat.frma.chung[temp[2],out=="Neg"]) 
-t.test(sva.combat.frma.chung[temp[2],out=="Pos"],sva.combat.frma.chung[temp[2],out=="Neg"])
+ttable[1,1]<-round(t.test(frma.chung[temp[2],out=="Pos"],frma.chung[temp[2],out=="Neg"])$statistic,2)
+#t.test(combat.frma.chung[temp[2],out=="Pos"],combat.frma.chung[temp[2],out=="Neg"]) 
+ttable[1,2]<-round(t.test(sva.combat.frma.chung[temp[2],out=="Pos"],sva.combat.frma.chung[temp[2],out=="Neg"])$statistic,2)
 
 #temp[3]
-t.test(frma.chung[temp[3],out=="Pos"],frma.chung[temp[3],out=="Neg"])
-t.test(combat.frma.chung[temp[3],out=="Pos"],combat.frma.chung[temp[3],out=="Neg"])
-t.test(sva.combat.frma.chung[temp[3],out=="Pos"],sva.combat.frma.chung[temp[3],out=="Neg"])
+ttable[2,1]<-round(t.test(frma.chung[temp[3],out=="Pos"],frma.chung[temp[3],out=="Neg"])$statistic,2)
+#t.test(combat.frma.chung[temp[3],out=="Pos"],combat.frma.chung[temp[3],out=="Neg"])
+ttable[2,2]<-round(t.test(sva.combat.frma.chung[temp[3],out=="Pos"],sva.combat.frma.chung[temp[3],out=="Neg"])$statistic,2)
 
 #temp[4]
-t.test(frma.chung[temp[4],out=="Pos"],frma.chung[temp[4],out=="Neg"])
-t.test(combat.frma.chung[temp[4],out=="Pos"],combat.frma.chung[temp[4],out=="Neg"])
-t.test(sva.combat.frma.chung[temp[4],out=="Pos"],sva.combat.frma.chung[temp[4],out=="Neg"])
+ttable[3,1]<-round(t.test(frma.chung[temp[4],out=="Pos"],frma.chung[temp[4],out=="Neg"])$statistic,2)
+#t.test(combat.frma.chung[temp[4],out=="Pos"],combat.frma.chung[temp[4],out=="Neg"])
+ttable[3,2]<-round(t.test(sva.combat.frma.chung[temp[4],out=="Pos"],sva.combat.frma.chung[temp[4],out=="Neg"])$statistic,2)
 # goes from not significant to significant!
 
-
+ProjectTemplate::cache("ttable")
 
 cols <- brewer.pal(3, "Dark2")
 cols <- cols[2:3]

@@ -4,7 +4,7 @@ The development of high-throughput biological experiments has been one of the gr
 
 Reproducibility is also an important and understudied part of data analysis in high-throughput biological data. Reproducibility, broadly defined, means the ability for an independent researcher to reproduce a scientify study. Beyond the broad definition, there is a lack of cohesiveness within the scientific community as to what ensures a reproducible analysis. Myriad issues that lead to better reproducibility are not well understood or well explained in the literature. These issues include the use of free and open software, the use of executable code rather than drag-and-drop methods, documenting the version of the code, systematic organization of the code, and a reliable method to distribute the code. There have been several high-profile cases where a combination of these factors have led to retractions and misguided clinical trials.
 
-The purpose of this paper is to provide a workflow to create and validate a predictor for a high-throughput genomic dataset. This workflow ensures the proper treatment of batch effects, while making the analysis reproducible and outlining best practices in a statistical analysis, all using the free and open statistical software R. We will examine a large dataset of head and neck squamous cell carcinoma, which has been collected by a collaborator. By following the workflow outlined in this paper, other researchers wanting to create a predictor from a genomic dataset can do so in a reproducible and reliable way that accounts for most of the unwanted variation in the dataset.
+The purpose of this paper is to provide a workflow to create and validate a predictor for a high-throughput genomic dataset. This workflow ensures the proper treatment of batch effects, while making the analysis reproducible and outlining best practices in a statistical analysis, all using the free and open statistical software R. We will examine a large microarray expression dataset of head and neck squamous cell carcinoma, which has been collected by a collaborator. By following the workflow outlined in this paper, other researchers wanting to create a predictor from a genomic dataset can do so in a reproducible and reliable way that accounts for most of the unwanted variation in the dataset.
 
 # Organizing the code and analysis:
 
@@ -224,7 +224,7 @@ print(xtable(tabgenesets), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Mon May 06 16:25:34 2013 -->
+<!-- Mon May 06 17:05:28 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Up in HPV Positive </TH> <TH> Down in HPV Positive </TH>  </TR>
   <TR> <TD align="right"> No Correction </TD> <TD> PYEON_HPV_POSITIVE_TUMORS_UP </TD> <TD> REACTOME_EXTRACELLULAR_MATRIX_ORGANIZATION </TD> </TR>
@@ -239,9 +239,24 @@ This analysis is reassuring. Both the uncorrected and corrected data correlate t
 ## Specific Marker Evaluation
 Often in an analysis, there is a specific gene or marker that you are interested in investigating further. In this case, p16 is an established marker for HPV positive tumors. It is present in nearly all the HPV positive tumors, but only present in 20% of HPV negative tumors. A known marker like this can be a helpful benchmark for ensuring that the batch correction method is not wiping out true differential expression in your dataset.
 
-Below are boxplots of the gene expression of p16 in HPV positive and HPV negative samples. There are three separate probes that measure the p16 levels, so all three are displayed. The code for this analysis is available in the `src` directory.
+In order to assess the effect that batch correction has on p16, we examined the t-statistic for the difference in mean expression between HPV positive and negative samples both before and after batch correction. On this specific micorarray (Affymetrix hgu133plus2) there are three probes assocated with p16. The code for this analysis can be found in the `src` directory.
 
 
+```r
+print(xtable(ttable), type = "html")
+```
+
+<!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
+<!-- Mon May 06 17:05:28 2013 -->
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> Before Batch Correction </TH> <TH> After Batch Correction </TH>  </TR>
+  <TR> <TD align="right"> 207039_at </TD> <TD align="right"> 7.78 </TD> <TD align="right"> 9.69 </TD> </TR>
+  <TR> <TD align="right"> 209644_x_at </TD> <TD align="right"> 6.06 </TD> <TD align="right"> 7.82 </TD> </TR>
+  <TR> <TD align="right"> 211156_at </TD> <TD align="right"> 1.41 </TD> <TD align="right"> 2.77 </TD> </TR>
+   </TABLE>
+
+
+We can be assured that the batch correction is not over-correcting in this case, because the expression is more differential for this marker after batch correction than before. Remarkably, one of the markers goes from a non-signification t-statistics to a significant one after batch correction.
 
 ## Prediction
 Above we gave motivation for why batch correction helped normalize the expression levels in different arrays. Now we'd like to convince you that this batch correction will help in prediction problems.
@@ -256,7 +271,7 @@ print(xtable(table(info.chung$Procurement, info.chung$HPV.Stat)), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Mon May 06 16:25:34 2013 -->
+<!-- Mon May 06 17:05:28 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Neg </TH> <TH> Pos </TH>  </TR>
   <TR> <TD align="right"> FFPE </TD> <TD align="right">  16 </TD> <TD align="right">   4 </TD> </TR>
@@ -310,7 +325,7 @@ print(xtable(predictor_results$tabmeans), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Mon May 06 16:25:34 2013 -->
+<!-- Mon May 06 17:05:28 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Average Prediction Accuracy </TH>  </TR>
   <TR> <TD align="right"> No Correction </TD> <TD align="right"> 0.78 </TD> </TR>
@@ -353,7 +368,7 @@ print(xtable(res), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Mon May 06 16:25:34 2013 -->
+<!-- Mon May 06 17:05:28 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+SVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
