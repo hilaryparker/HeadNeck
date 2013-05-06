@@ -191,6 +191,10 @@ This analysis is reassuring. Both the uncorrected and corrected data correlate t
 ## Specific Marker Evaluation
 Often in an analysis, there is a specific gene or marker that you are interested in investigating further. In this case, p16 is an established marker for HPV positive tumors. It is present in nearly all the HPV positive tumors, but only present in 20% of HPV negative tumors. A known marker like this can be a helpful benchmark for ensuring that the batch correction method is not wiping out true differential expression in your dataset.
 
+Below are boxplots of the gene expression of p16 in HPV positive and HPV negative samples. There are three separate probes that measure the p16 levels, so all three are displayed. The code for this analysis is available in the `src` directory.
+
+
+
 ## Prediction
 Above we gave motivation for why batch correction helped normalize the expression levels in different arrays. Now we'd like to convince you that this batch correction will help in prediction problems.
 

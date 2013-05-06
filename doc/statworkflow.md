@@ -222,7 +222,7 @@ print(xtable(tabgenesets), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Mon May 06 14:16:38 2013 -->
+<!-- Mon May 06 14:56:09 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Up in HPV Positive </TH> <TH> Down in HPV Positive </TH>  </TR>
   <TR> <TD align="right"> No Correction </TD> <TD> PYEON_HPV_POSITIVE_TUMORS_UP </TD> <TD> REACTOME_EXTRACELLULAR_MATRIX_ORGANIZATION </TD> </TR>
@@ -237,6 +237,10 @@ This analysis is reassuring. Both the uncorrected and corrected data correlate t
 ## Specific Marker Evaluation
 Often in an analysis, there is a specific gene or marker that you are interested in investigating further. In this case, p16 is an established marker for HPV positive tumors. It is present in nearly all the HPV positive tumors, but only present in 20% of HPV negative tumors. A known marker like this can be a helpful benchmark for ensuring that the batch correction method is not wiping out true differential expression in your dataset.
 
+Below are boxplots of the gene expression of p16 in HPV positive and HPV negative samples. There are three separate probes that measure the p16 levels, so all three are displayed. The code for this analysis is available in the `src` directory.
+
+
+
 ## Prediction
 Above we gave motivation for why batch correction helped normalize the expression levels in different arrays. Now we'd like to convince you that this batch correction will help in prediction problems.
 
@@ -250,7 +254,7 @@ print(xtable(table(info.chung$Procurement, info.chung$HPV.Stat)), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Mon May 06 14:16:38 2013 -->
+<!-- Mon May 06 14:56:09 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Neg </TH> <TH> Pos </TH>  </TR>
   <TR> <TD align="right"> FFPE </TD> <TD align="right">  16 </TD> <TD align="right">   4 </TD> </TR>
@@ -304,7 +308,7 @@ print(xtable(predictor_results$tabmeans), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Mon May 06 14:16:38 2013 -->
+<!-- Mon May 06 14:56:09 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Average Prediction Accuracy </TH>  </TR>
   <TR> <TD align="right"> No Correction </TD> <TD align="right"> 0.78 </TD> </TR>
@@ -347,7 +351,7 @@ print(xtable(res), type = "html")
 ```
 
 <!-- html table generated in R 3.0.0 by xtable 1.7-1 package -->
-<!-- Mon May 06 14:16:39 2013 -->
+<!-- Mon May 06 14:56:09 2013 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> None </TH> <TH> ComBat+SVA </TH> <TH> ComBat+SVA+fSVA </TH>  </TR>
   <TR> <TD align="right"> 2004-04-22-CHC48-Chung-Human2.0-Rep1.CEL </TD> <TD> Neg </TD> <TD> Neg </TD> <TD> Neg </TD> </TR>
